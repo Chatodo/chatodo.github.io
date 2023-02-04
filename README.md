@@ -1,5 +1,5 @@
 # chatodo.github.io
-construction_worker :construction: Mon (futur) incroyable site web :construction:
+:construction: Mon (futur) incroyable site web :construction:
 
 TODO: 
 - [ ] Finir la description du site
