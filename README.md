@@ -1,2 +1,7 @@
 # chatodo.github.io
-Mon incroyable site !
+construction_worker :construction: Mon (futur) incroyable site web :construction:
+
+TODO: 
+- [ ] Finir la description du site
+- [ ] Adapter le site pour qu'il soit responsive
+- [ ] Traduire le site en anglais
