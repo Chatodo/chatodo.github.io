@@ -29,8 +29,9 @@
 
 		header.tete {
 			position: relative;
-			background: url("./cover.jpg") no-repeat center center;
+			background-image: url("img/cover.jpg");
 			background-size: cover;
+  			height: 80vh;
 			padding-top: 4rem;
 			padding-bottom: 4rem;
 		}
@@ -51,15 +52,25 @@
 			color: #ffffff;
 		}
 
-		.propos{
-			padding-left: 5px;
+		#propos{
+			padding-left: 15px;
 			padding-top: 10px;
 		}
 
 		.navbar-nav > li{
-  			margin-left: 5px;
-  			margin-right: 5px;
+  			margin-left: 15px;
+  			margin-right: 15px;
 		}
+		
+		@media (min-width: 624px) {
+			.tete{
+				font-size: 1.5rem;
+			}
+			#propos {
+				font-size: 1.3rem;
+			}
+		}
+	
 	</style>
 
 <body>
@@ -69,20 +80,23 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav">
-			<li class="nav-item active">
-				<a class="nav-link" href="#">Accueil<span class="sr-only">(current)</span></a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="./projet.html">Projets</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="#">CV</a>
-			</li>
-			<li class="nav-item">
-				<a class="nav-link" href="./divers.html">Divers</a>
-			</li>
+			<ul class="navbar-nav ms-auto">
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Accueil<span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#propos">À propos</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#divers">Divers</a>
+				</li>
 			</ul>
+			<a class="d-inline-block d-lg-none" href="https://chatodo.github.io/en">
+				<img src="img/flag-uk.png" alt="uk">
+			</a>
+			<a class="d-none d-lg-inline-block pull-right" href="https://chatodo.github.io/en">
+				<img src="img/flag-uk.png" alt="uk">
+			</a>
 		</div>
 		</nav>
 		<header class="tete">
@@ -90,36 +104,49 @@
                 <div class="row justify-content-md-center">
                     <div class="col">
                         <div class="text-white">
-							<h1 class="display-4"> <b>Étudiant en master informatique SFPN à Sorbonne Université </b></h1>
+							<h1 class="display-3"> 
+								<b>Étudiant en master informatique à Sorbonne Université </b>
+							</h1>
 							<br>
 							<h2>Intéressé par la recherche de solutions innovantes liés aux défis à la cybersécurité ainsi que sur les systèmes d'exploitation.</h2>
+							<br>
+							<h2>Passionné par la programmation et l'informatique en général.</h2>
+							<br>
 						</div>
 					</div>
 				</div>
 			</div>
+			<div class="col text-center">
+			<a href="#propos">
+				<i class="fas fa-chevron-down text-white" style="font-size: 70px;"></i>
+			</a>
+			</div>
         </header>
-		<section class="propos">
-			<h2 class="text-center">À propos de moi </h2>
+		</div>
+		<section id="propos">
+			<h2 class="text-center">À propos de moi</h2>
 			<p>
-				Ayant obtenu une solide formation en informatique par le biais d'une licence obtenue dans l'université Sorbonne Paris Nord, ce qui m'a permis d'acquérir des compétences en programmation et en algorithmique. <br>
-				Je suis constamment à la recherche de nouvelles manières de protéger les données et les systèmes informatiques de potentielles menaces.<br>
-				J'ai une grande expérience dans l'utilisation des systèmes d'exploitation Windows/Linux, et je suis capable de configurer, administrer et dépanner ces systèmes de manière efficace<br>
-				Constamment à l'affût des nouvelles technologies et des tendances du domaine, et j'ai un solide esprit d'analyse et de recherche.
-				</p>
-				<u> <h4>Résumé rapide</u> (voir plus dans le <a href="#">CV</a>) </h4>
-				- Mes compétences :
-				<ul>
-					<li>Programmation : C, Python, Bash/Shell, Java, PHP, HTML, CSS (Bootstrap), JavaScript (Jquery), SQL</li>
-					<li>Programmation parralèle : OpenMP, OpenMPI, SIMD </li>
-					<li>Administration système : Windows, Linux</li>
-					<li>Anglais courant</li>
-				</ul>
-				- Expérience en développement web (2 mois)
+				Ayant obtenu une solide formation en informatique par le biais d'une licence obtenue dans l'université <a href = "http://odf.univ-paris13.fr/fr/offre-de-formation/feuilleter-le-catalogue-1/sciences-technologies-sante-STS/licence-lmd-XA/licence-informatique-program-gl4inf-116-2-2.html">Sorbonne Paris Nord</a>, ce qui m'a permis d'acquérir des compétences en programmation et en algorithmique. <br>
+				Je suis actuellement en master informatique SFPN à Sorbonne Université.<br>
+				Je suis intéressé par la cybersécurité ainsi que les systèmes depuis le début de mon apprentisage de l'informatique, je suis constamment à la recherche de nouvelles manières de protéger les données et les systèmes informatiques de potentielles menaces.<br>
+				Constamment à l'affût des nouvelles technologies et des tendances du domaine, je suis toujours à la recherche de nouvelles opportunités pour améliorer mes compétences et mes connaissances.
+			</p>
+			<u> <h4>Résumé rapide non exhaustive</u></h4>
+			- Mes compétences :
+			<ul>
+				<li>Programmation, principalement : C, Python</li>
+				<li>Programmation parralèle : OpenMPI, OpenMP, AVX </li>
+				<li>OS : Windows, Linux (+ Adminstration système) </li>
+				<li>Outils : LaTeX, Photoshop </li>
+				<li>Anglais courant (niveau B2)</li>
+			</ul>
+			- Expérience en développement web (2 mois)
+			<a href="https://github.com/Chatodo/Projets-Licence">La liste des projets que j'ai fait en licence est disponible ici</a>
 		</section>
 		<hr class="featurette-divider">
 		<blockquote class="blockquote text-center">
 			<p class="mb-0"><mark>"Sûrement une perle rare"</mark></p>
-			<footer class="blockquote-footer">Promis c'est pas moi :)</footer>
+			<footer class="blockquote-footer">Promis cela ne vient pas de moi :)</footer>
 		  </blockquote>
 	<footer class="container-fluid bg-4 text-center">
 		<div class="container p-4">
