@@ -3,5 +3,5 @@
 
 TODO: 
 - [ ] Finir la description du site
-- [ ] Adapter le site pour qu'il soit responsive
+- [x] Adapter le site pour qu'il soit responsive (en partie)
 - [ ] Traduire le site en anglais
