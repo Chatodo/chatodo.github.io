@@ -2,14 +2,11 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 		<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Ivan Krivokuca | Github </title>
+		<title>Ivan Krivokuca | GitHub </title>
 	</head>
 	<style>
 		a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover{
@@ -21,24 +18,23 @@
 		}
 
 		body {
-			font: 18px "Montserrat", sans-serif;
+			font: 19px "Montserrat", sans-serif;
 			line-height: 1.8;
 			background-color: #f8f9fa;
 		}
 
 		header.tete {
 			position: relative;
-			/*background-image: url("img/cover.jpg");
-			background-size: cover;*/
-  			/* height: 80vh; */
+			height: 100vh;
 			padding-top: 4rem;
 			padding-bottom: 1rem;
+			color: #f8f9fa;
 		}
 
 		header.tete:before {
 			content: "";
 			position: absolute;
-			background-color: #1b509b;
+			/* background-color: #1b509b; */
 			height: 100%;
 			width: 100%;
 			top: 0;
@@ -51,10 +47,36 @@
 			color: #ffffff;
 		}
 
-		#propos{
-			padding-left: 10px;
-			padding-top: 10px;
+		#propos {
+			padding: 10px;
+			min-height: 100vh;
 		}
+
+		@media screen and (max-width: 767px) {
+			h2.text-center {
+				font-size: 1.8em;
+			}
+			.section-title {
+    			font-size: 1.1em;
+  			}
+			p {
+				font-size: 0.9em;
+			}
+
+			h4 {
+				font-size: 1em;
+			}
+
+			ul {
+				margin-left: 10px;
+			}
+		}
+
+		.content {
+ 		 	max-width: 800px;
+  			margin: 0 auto;
+		}
+
 
 		.navbar-nav > li{
   			margin-left: 15px;
@@ -62,96 +84,210 @@
 		}
 
 		.maj{
-			font-size: 10px;
+			font-size: 13px;
 			color: gray;
+		}
+
+		.position-absolute.w-100 {
+			left: 50%;
+			bottom: 60px;
+			transform: translateX(-50%);
+		}
+
+		@media (min-width: 768px) {
+			#propos {
+				height: 100vh;
+			}
+			.position-absolute.w-100 {
+				bottom: 60px;
+			}
+		}
+
+		@media (min-width: 992px) {
+			.position-absolute.w-100 {
+				bottom: 80px;
+			}
+		}
+
+		@media (max-width: 576px) {
+			h1.display-3 {
+				font-size: 2.5rem;
+			}
+			
+			h2 {
+				font-size: 1.5rem;
+			}
+			
+			header.tete {
+				padding-top: 2rem;
+			}
+		}
+
+		p {
+			font-size: 1em;
+			text-align: justify;
+			margin-bottom: 10px;
+		}
+
+		.header-bg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			background-image: url('img/giphy.gif');
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+
+		.text-offset {
+  			margin-left: 10px;
+		}
+
+		ul {
+  			list-style-type: none;
+			padding: 0;
+			margin-left: 20px;
+			margin-bottom: 10px;
+		}
+
+		ul li {
+  			position: relative;
+ 			margin-bottom: 8px;
+  			padding-left: 20px;
+  			line-height: 1.4;
+		}
+
+		ul li::before {
+			position: absolute;
+			left: 0;
+			font-size: 1.1em;
+		}
+		.section-title {
+  			font-size: 1.3em;
+  			font-weight: bold;
+  			margin-bottom: 5px;
 		}
 	
 	</style>
-
 <body>
 	<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
 		<a class="navbar-brand">Ivan Krivokuca</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav ms-auto">
-				<li class="nav-item active">
-					<a class="nav-link" href="#">Accueil<span class="sr-only">(current)</span></a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#propos">À propos</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="#divers">Divers</a>
-				</li>
-			</ul>
-			<a class="d-inline-block d-lg-none" href="https://chatodo.github.io/en">
-				<img src="img/flag-uk.png" alt="uk">
-			</a>
-			<a class="d-none d-lg-inline-block pull-right" href="https://chatodo.github.io/en">
-				<img src="img/flag-uk.png" alt="uk">
-			</a>
-		</div>
 		</nav>
 		<header class="tete">
-            <div class="container position-relative">
-                <div class="row justify-content-md-center">
-                        <div class="text-white">
-							<h1 class="display-3"> 
-							<b>Étudiant en master informatique à Sorbonne Université</b>
-							</h1>
-							<br>
-							<h2>Intéressé par la recherche de solutions innovantes liés aux défis à la cybersécurité ainsi que sur les systèmes d'exploitation.</h2>
-							<br>
-							<h2>Passionné par la programmation et l'informatique en général.</h2>
-							<br>
-					</div>
-				</div>
-			</div>
-			<div class="col text-center">
-			<a href="#propos">
-				<i class="fas fa-chevron-down text-white" style="font-size: 70px;"></i>
-			</a>
-			</div>
-        </header>
-		</div>
+			<div class="header-bg"></div>
+			<h1 class="display-3 text-offset">
+				<span id="typed-1"></span>
+			  </h1>
+			  <br>
+			  <h2 class="text-offset">
+				<span id="typed-2"></span>
+			  </h2>
+			  <br>
+			  <h2 class="text-offset">
+				<span id="typed-3"></span>
+			  </h2>
+			  
+			<div class="col text-center position-absolute w-100">
+				<a href="#propos">
+					<i class="fas fa-chevron-down text-white" style="font-size: 70px;"></i>
+				</a>
+			</div>			
+		</header>
 		<section id="propos">
-			<h2 class="text-center">À propos de moi</h2>
-			<p>
-				Ayant obtenu une solide formation en informatique par le biais d'une licence obtenue dans l'université <a href = "http://odf.univ-paris13.fr/fr/offre-de-formation/feuilleter-le-catalogue-1/sciences-technologies-sante-STS/licence-lmd-XA/licence-informatique-program-gl4inf-116-2-2.html">Sorbonne Paris Nord</a>, ce qui m'a permis d'acquérir des compétences en programmation et en algorithmique. <br>
-				Je suis actuellement en master informatique SFPN à Sorbonne Université.<br>
-				Je suis intéressé par la cybersécurité ainsi que les systèmes depuis le début de mon apprentisage de l'informatique, je suis constamment à la recherche de nouvelles manières de protéger les données et les systèmes informatiques de potentielles menaces.<br>
-				Constamment à l'affût des nouvelles technologies et des tendances du domaine, je suis toujours à la recherche de nouvelles opportunités pour améliorer mes compétences et mes connaissances.
-			</p>
-			<u> <h4>Résumé rapide non exhaustive</u></h4>
-			- Mes compétences :
+			<h2 class="text-center">À propos de moi (assez brève)</h2>
+			<hr class="featurette-divider">
+			<h4 class="section-title">🔭 Expérience professionnelle: </h4>
 			<ul>
-				<li>Programmation, principalement : C, Python</li>
-				<li>Programmation parralèle : OpenMPI, OpenMP, AVX </li>
-				<li>OS : Windows, Linux (+ Adminstration système) </li>
-				<li>Outils : LaTeX, Photoshop </li>
-				<li>Anglais courant (niveau B2)</li>
+				<li>Stage de 2 mois en développement web (PHP, HTML, CSS + Bootstrap, JS, MySQl)</li>
 			</ul>
-			- Expérience en développement web (2 mois)
+			<br>
+			<h4 class="section-title">🎓 Formation: </h4>
+			<ul>
+			<li>Licence informatique à <a href="http://odf.univ-paris13.fr/fr/offre-de-formation/feuilleter-le-catalogue-1/sciences-technologies-sante-STS/licence-lmd-XA/licence-informatique-program-gl4inf-116-2-2.html">Sorbonne Paris Nord</a> (2018-2022)</li>
+			<li>Master SFPN à <a href="https://sciences.sorbonne-universite.fr/formation-sciences/masters/master-informatique/parcours-sfpn">Sorbonne Université</a> (2023)</li>
+			</ul>
+			<br>
+			<h4 class="section-title">💻 Compétences techniques: </h4>
+			<ul>
+				<li>Programmation impérative/système : C, Python, Bash/Shell</li>
+				<li>Programmation fonctionnelle : Ocaml</li>
+				<li>Programmation orientée objet : Java, C++, Python</li>
+				<li>Programmation web : PHP, HTML, CSS, JS, JQuery, Bootstrap, MySQL</li>
+				<li>Programmation parallèle : OpenMPI, OpenMP, AVX </li>
+				<li>Visualisation de données : Pandas, Numpy, Matplotlib, Seaborn, Plotly, scikit-learn </li>
+				<li>Notions en programmation réseau (Socket, TCP/IP, UDP)</li>
+				<li>Notions en cybersécurité (cryptographie, sécurité des systèmes d'exploitation, sécurité des réseaux)</li>
+				<li>OS : Windows, Linux</li>
+				<li>Outils : LaTeX, Photoshop </li>
+				<li>Anglais (~ Niveau C1) </li>
+			</ul>
 			<br>
 			<a href="https://github.com/Chatodo/Projets-Licence">La liste des projets que j'ai fait en licence est disponible ici</a>
 		</section>
-		<hr class="featurette-divider">
-		<blockquote class="blockquote text-center">
-			<p class="mb-0"><mark>"Sûrement une perle rare"</mark></p>
-			<footer class="blockquote-footer">Promis cela ne vient pas de moi :)</footer>
-		  </blockquote>
-	<footer class="container-fluid bg-4 text-center">
-		<div class="container p-4">
-			<section class="mb-4">
-				<h3 class="text-center">Mes liens</h3>
-				<a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/ivan-krivokuca/" role="button"><i class="fab fa-linkedin-in"></i></a>
-				<a class="btn btn-outline-light btn-floating m-1" href='m&#97;il&#116;o&#58;i%76an&#46;kri&#118;o%6&#66;uc&#97;%40o&#117;%74&#108;oo%6B&#46;f%72' role="button"><i class="fa fa-envelope"></i></a>
-				<a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Chatodo" role="button"><i class="fab fa-github"></i></a>
-				<div class = "maj">Dernière mise à jour : 12/02/2023 </div>
-		</div>
-	</footer>
+		<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+			<div class="col-md-4 d-flex align-items-center">
+				<a href = "https://github.com/Chatodo/chatodo.github.io"><span class="mb-3 mb-md-0 fs-4 maj">Dernière mise à jour : 30/04/2023 </span> </a>
+			</div>
+			<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+				<a class="btn btn-floating m-1 btn-lg" href="https://www.linkedin.com/in/ivan-krivokuca/" role="button"><i class="fab fa-linkedin-in"></i></a>
+				<a class="btn btn-floating m-1 btn-lg" href='m&#97;il&#116;o&#58;i%76an&#46;kri&#118;o%6&#66;uc&#97;%40o&#117;%74&#108;oo%6B&#46;f%72' role="button"><i class="fa fa-envelope"></i></a>
+				<a class="btn btn-floating m-1 btn-lg" href="https://github.com/Chatodo" role="button"><i class="fab fa-github"></i></a>
+			</ul>
+		</footer>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+		<script>
+			document.addEventListener('DOMContentLoaded', function () {
+				new Typed('#typed-1', {
+					strings: ['👨‍💻 Bonjour, je suis Ivan Krivokuca, étudiant en informatique à Sorbonne Université dans le master SFPN.'],
+					typeSpeed: 50,
+					onComplete: function () {
+						document.querySelector('#typed-1').style.transition = 'opacity 1s';
+						document.querySelector('#typed-1').style.opacity = 1;
+					}
+				});
+
+				new Typed('#typed-2', {
+					strings: ["💻 Intéressé par le domaine du développement, cybersécurité et systèmes d'exploitation."],
+					typeSpeed: 30,
+					startDelay: 3000,
+					onComplete: function () {
+						document.querySelector('#typed-2').style.transition = 'opacity 1s';
+						document.querySelector('#typed-2').style.opacity = 1;
+					}
+				});
+
+				new Typed('#typed-3', {
+					strings: ['(Mes compétences ne sont pas réprésentatives au GIF que vous voyez, promis !)'],
+					typeSpeed: 25,
+					startDelay: 6500,
+					onComplete: function () {
+						document.querySelector('#typed-3').style.transition = 'opacity 1s';
+						document.querySelector('#typed-3').style.opacity = 1;
+					}
+				});
+			});
+			$(document).ready(function () {
+				$('a[href^="#"]').on('click', function (event) {
+					event.preventDefault();
+					var target = this.hash;
+					var $target = $(target);
+					$('html, body').animate(
+					{
+						scrollTop: $target.offset().top,
+					},
+					1250, 
+					'swing' 
+						);
+					});
+			});
+		</script>
 </body>
 </html>
+
 
