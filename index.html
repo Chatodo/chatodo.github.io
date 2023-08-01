@@ -49,7 +49,7 @@
 
 		#propos {
 			padding: 10px;
-			min-height: 100vh;
+			min-height: calc(100vh - 100px);
 		}
 
 		@media screen and (max-width: 767px) {
@@ -170,66 +170,145 @@
   			font-weight: bold;
   			margin-bottom: 5px;
 		}
-	
+
+		#accordion_all{
+			margin-left: 20px;
+			margin-bottom: 10px;
+		}
+
+		#accordion_all .btn-link:hover {
+    		text-decoration: none;
+  		}
+		
+		#accordion_all .card-header .btn-link {
+    		color: black;
+  		}
 	</style>
 <body>
-	<nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-		<a class="navbar-brand">Ivan Krivokuca</a>
-		</nav>
-		<header class="tete">
-			<div class="header-bg"></div>
-			<h1 class="display-3 text-offset">
-				<span id="typed-1"></span>
-			  </h1>
-			  <br>
-			  <h2 class="text-offset">
-				<span id="typed-2"></span>
-			  </h2>
-			  <br>
-			  <h2 class="text-offset">
-				<span id="typed-3"></span>
-			  </h2>
-			  
-			<div class="col text-center position-absolute w-100">
-				<a href="#propos">
-					<i class="fas fa-chevron-down text-white" style="font-size: 70px;"></i>
-				</a>
-			</div>			
-		</header>
-		<section id="propos">
-			<h2 class="text-center">À propos de moi (assez brève)</h2>
-			<hr class="featurette-divider">
-			<h4 class="section-title">🔭 Expérience professionnelle: </h4>
-			<ul>
-				<li>Stage de 2 mois en développement web (PHP, HTML, CSS + Bootstrap, JS, MySQl)</li>
-			</ul>
-			<br>
-			<h4 class="section-title">🎓 Formation: </h4>
-			<ul>
-			<li>Licence informatique à <a href="http://odf.univ-paris13.fr/fr/offre-de-formation/feuilleter-le-catalogue-1/sciences-technologies-sante-STS/licence-lmd-XA/licence-informatique-program-gl4inf-116-2-2.html">Sorbonne Paris Nord</a> (2018-2022)</li>
-			<li>Master SFPN à <a href="https://sciences.sorbonne-universite.fr/formation-sciences/masters/master-informatique/parcours-sfpn">Sorbonne Université</a> (2023)</li>
-			</ul>
-			<br>
-			<h4 class="section-title">💻 Compétences techniques: </h4>
-			<ul>
-				<li>Programmation impérative/système : C, Python, Bash/Shell</li>
-				<li>Programmation fonctionnelle : Ocaml</li>
-				<li>Programmation orientée objet : Java, C++, Python</li>
-				<li>Programmation web : PHP, HTML, CSS, JS, JQuery, Bootstrap, MySQL</li>
-				<li>Programmation parallèle : OpenMPI, OpenMP, AVX </li>
-				<li>Visualisation de données : Pandas, Numpy, Matplotlib, Seaborn, Plotly, scikit-learn </li>
-				<li>Notions en programmation réseau (Socket, TCP/IP, UDP)</li>
-				<li>Notions en cybersécurité (cryptographie, sécurité des systèmes d'exploitation, sécurité des réseaux)</li>
-				<li>OS : Windows, Linux</li>
-				<li>Outils : LaTeX, Photoshop </li>
-				<li>Anglais (~ Niveau C1) </li>
-			</ul>
-			<br>
-			<a href="https://github.com/Chatodo/Projets-Licence">La liste des projets que j'ai fait en licence est disponible ici</a>
-		</section>
+	<header class="tete">
+		<div class="header-bg"></div>
+		<h1 class="display-3 text-offset">
+			<span id="typed-1"></span>
+		</h1>
+		<br>
+		<h2 class="text-offset">
+			<span id="typed-2"></span>
+		</h2>
+		<br>
+		<h2 class="text-offset">
+			<span id="typed-3"></span>
+		</h2>
+		<div class="col text-center position-absolute w-100">
+			<a href="#propos">
+				<i class="fas fa-chevron-down text-white" style="font-size: 70px;"></i>
+			</a>
+		</div>			
+	</header>
+	<section id="propos">
+		<h2 class="text-center">À propos de moi (assez brève)</h2>
+		<hr class="featurette-divider">
+		<h4 class="section-title">🔭 Expérience professionnelle: </h4>
+		<ul>
+			<li>Stage de 2 mois en développement web (PHP, HTML, CSS + Bootstrap, JS, MySQl)</li>
+		</ul>
+		<br>
+		<h4 class="section-title">🎓 Formation: </h4>
+		<div id ="accordion_all">
+		<div id="accordion">
+			<div class="card">
+				<div class="card-header" id="headingOne">
+				<h5 class="mb-0">
+					<button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+					Master Cybersécurité et E-santé à <a href="https://biomedicale.u-paris.fr/master-informatique/master-informatique-parcours-cybersecurite-et-esante/">Université Paris Cité</a> (2023-2025)
+					</button>
+					<button class="btn btn-light ml-auto" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+					<i class="fas fa-chevron-down"></i>
+					</button>
+				</h5>
+				</div>
+			
+				<div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+				<div class="card-body">
+				</div>
+				</div>
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-header" id="headingTwo">
+				<h5 class="mb-0">
+					<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+					Master 1 CCA (Cryptologie, Calcul Haute Performance et Algorithmes, anciennement SFPN) à <a href="https://sciences.sorbonne-universite.fr/formation-sciences/masters/master-informatique/parcours-sfpn">Sorbonne Université</a> (2022-2023)
+					</button>
+					<button class="btn btn-light ml-auto" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseOne">
+					<i class="fas fa-chevron-down"></i>
+					</button>
+				</h5>
+				</div>
+				<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+				<div class="card-body">
+					Complexité, algorithmes randomisés et approchés
+					<br>
+					Numerical and Symbolic Algorithms Modeling (Linear Algebra, SVD, QR, Karastuba, FFT, ...)
+					<br>
+					Numerical Algorithms (Gradient Descent, Newton, ...)
+					<br>
+					Basics of Algebraic Algorithms (GCD, FFT, ...)
+					<br>
+					Cryptologie 1 (RSA, AES, DES, SHA, OpenSSL)
+					<br>
+					Parallel Programming (OpenMP, MPI, AVX2)
+					<br>
+					Programmation Noyaux Linux
+					<br>
+					Algorithmique répartie (MPI, P2P, élection leader, détection terminaison, ...)
+				</div>
+				</div>
+			</div>
+
+			<div class="card">
+				<div class="card-header" id="headingThree">
+				<h5 class="mb-0">
+					<button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+					Licence informatique à <a href="http://odf.univ-paris13.fr/fr/offre-de-formation/feuilleter-le-catalogue-1/sciences-technologies-sante-STS/licence-lmd-XA/licence-informatique-program-gl4inf-116-2-2.html">Sorbonne Paris Nord</a> (2018-2022)
+					</button>
+					<button class="btn btn-light ml-auto" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseOne">
+					<i class="fas fa-chevron-down"></i>
+					</button>
+				</h5>
+				</div>
+				<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+				<div class="card-body">
+					Algèbre, Analyse, Probablité & Statistiques, Logique, Théorie des langages, Calculabilité, Théorie des graphes
+					<br>
+					Conception algorithmique, Programmation impérative, Programmation fonctionnelle, Programmation orientée objet, Programmation web, Programmation Unix, Visualisation de données
+					<br>
+					Architecture des ordinateurs, Bases de données, Systèmes et réseaux (C), Administration système (Linux)
+				</div>
+				</div>  
+			</div>
+		</div>
+		</div>
+		<br>
+		<h4 class="section-title">💻 Compétences techniques: </h4>
+		<ul>
+			<li>Programmation impérative/système : C, Python, Bash/Shell</li>
+			<li>Programmation fonctionnelle : Ocaml</li>
+			<li>Programmation orientée objet : Java, C++, Python</li>
+			<li>Programmation web : PHP, HTML, CSS, JS, JQuery, Bootstrap, MySQL</li>
+			<li>Programmation parallèle : OpenMPI, OpenMP, AVX </li>
+			<li>Visualisation de données : Pandas, Numpy, Matplotlib, Seaborn, Plotly, scikit-learn </li>
+			<li>Notions en programmation réseau (Socket, TCP/IP, UDP)</li>
+			<li>Notions en cybersécurité (cryptographie, sécurité des systèmes d'exploitation, sécurité des réseaux)</li>
+			<li>OS : Windows, Linux</li>
+			<li>Outils : LaTeX, Photoshop </li>
+			<li>Anglais (~ Niveau C1) </li>
+		</ul>
+		<br>
+		<a href="https://github.com/Chatodo/Projets-Licence">La liste des projets que j'ai fait en licence est disponible ici</a>
 		<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
 			<div class="col-md-4 d-flex align-items-center">
-				<a href = "https://github.com/Chatodo/chatodo.github.io"><span class="mb-3 mb-md-0 fs-4 maj">Dernière mise à jour : 30/04/2023 </span> </a>
+				<a href = "https://github.com/Chatodo/chatodo.github.io"><span class="mb-3 mb-md-0 fs-4 maj">Dernière mise à jour : 02/08/23 </span> </a>
 			</div>
 			<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
 				<a class="btn btn-floating m-1 btn-lg" href="https://www.linkedin.com/in/ivan-krivokuca/" role="button"><i class="fab fa-linkedin-in"></i></a>
@@ -237,56 +316,58 @@
 				<a class="btn btn-floating m-1 btn-lg" href="https://github.com/Chatodo" role="button"><i class="fab fa-github"></i></a>
 			</ul>
 		</footer>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
-		<script>
-			document.addEventListener('DOMContentLoaded', function () {
-				new Typed('#typed-1', {
-					strings: ['👨‍💻 Bonjour, je suis Ivan Krivokuca, étudiant en informatique à Sorbonne Université dans le master SFPN.'],
-					typeSpeed: 50,
-					onComplete: function () {
-						document.querySelector('#typed-1').style.transition = 'opacity 1s';
-						document.querySelector('#typed-1').style.opacity = 1;
-					}
+	</section>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			new Typed('#typed-1', {
+				strings: ['👨‍💻 Bonjour, je suis Ivan Krivokuca, étudiant en informatique à Université Paris Cité dans le master Cybersécurité et E-santé.'],
+				typeSpeed: 35,
+				onComplete: function () {
+					document.querySelector('#typed-1').style.transition = 'opacity 1s';
+					document.querySelector('#typed-1').style.opacity = 1;
+				}
+			});
+
+			new Typed('#typed-2', {
+				strings: ["💻 Intéressé par le domaine du développement, cybersécurité et systèmes d'exploitation."],
+				typeSpeed: 30,
+				startDelay: 2500,
+				onComplete: function () {
+					document.querySelector('#typed-2').style.transition = 'opacity 1s';
+					document.querySelector('#typed-2').style.opacity = 1;
+				}
+			});
+		});
+		$(document).ready(function () {
+			$('a[href^="#"]').on('click', function (event) {
+				event.preventDefault();
+				var target = this.hash;
+				var $target = $(target);
+				$('html, body').animate(
+				{
+					scrollTop: $target.offset().top,
+				},
+				1250, 
+				'swing' 
+					);
+				});
+				$("#headingOne").click(function() {
+					$("#collapseOne").collapse("toggle");
 				});
 
-				new Typed('#typed-2', {
-					strings: ["💻 Intéressé par le domaine du développement, cybersécurité et systèmes d'exploitation."],
-					typeSpeed: 30,
-					startDelay: 3000,
-					onComplete: function () {
-						document.querySelector('#typed-2').style.transition = 'opacity 1s';
-						document.querySelector('#typed-2').style.opacity = 1;
-					}
+				$("#headingTwo").click(function() {
+					$("#collapseTwo").collapse("toggle");
 				});
 
-				new Typed('#typed-3', {
-					strings: ['(Mes compétences ne sont pas réprésentatives au GIF que vous voyez, promis !)'],
-					typeSpeed: 25,
-					startDelay: 6500,
-					onComplete: function () {
-						document.querySelector('#typed-3').style.transition = 'opacity 1s';
-						document.querySelector('#typed-3').style.opacity = 1;
-					}
+				$("#headingThree").click(function() {
+					$("#collapseThree").collapse("toggle");
 				});
-			});
-			$(document).ready(function () {
-				$('a[href^="#"]').on('click', function (event) {
-					event.preventDefault();
-					var target = this.hash;
-					var $target = $(target);
-					$('html, body').animate(
-					{
-						scrollTop: $target.offset().top,
-					},
-					1250, 
-					'swing' 
-						);
-					});
-			});
-		</script>
+		});
+	</script>
 </body>
 </html>
 
