@@ -34,9 +34,6 @@ repository: chatodo/chatodo.github.io
 
 # Build settings
 
-plugins:
-  - jekyll-include-cache
-
 footer:
   links:
     - label: "LinkedIn"
@@ -52,7 +49,7 @@ footer:
 atom_feed:
   hide: true
 
-nclude:
+include:
   - .htaccess
   - _pages
 exclude:
