@@ -1,7 +1,5 @@
 main:
   - title: "About me"
     url: "/"
-  - title: "Projects"
-    url: "projects/"
   - title: "CV"
-    url: "files/images/cat_computer.jpg"
+    url: "files/cv.pdf"

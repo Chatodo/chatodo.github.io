@@ -4,7 +4,8 @@ search: false
 ---
 
 @charset "utf-8";
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin2 | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
-@import "minimal-mistakes/sectionsdark"; // sections
-@import "minimal-mistakes/accordiondark"; // accordion
+@import "../../_saas/minimal-mistakes/sectionsdark"; // sections
+@import "../../_saas/minimal-mistakes/accordiondark"; // accordion

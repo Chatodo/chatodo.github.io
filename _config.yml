@@ -10,6 +10,7 @@
 # Review documentation to determine if you should use `theme` or `remote_theme`
 # https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
 
+<<<<<<< HEAD
 # theme                  : "minimal-mistakes-jekyll"
 # remote_theme           : "mmistakes/minimal-mistakes"
 minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
@@ -105,6 +106,29 @@ analytics:
 
 github_username:  Chatodo
 # Site Footer
+=======
+title: Ivan Krivokuca | GitHub
+#locale: fr-FR
+name: Ivan Krivokuca
+
+
+description: >- # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+#baseurl: "" # the subpath of your site, e.g. /blog
+domain: chatodo.github.io
+url: "https://chatodo.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  Chatodo
+repository: chatodo/chatodo.github.io
+
+# Build settings
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+minimal_mistakes_skin: "dirt"
+plugins:
+  - jekyll-include-cache
+
+>>>>>>> parent of 12f35aa (v2024-1)
 footer:
   links:
     - label: "LinkedIn"

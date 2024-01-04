@@ -8,5 +8,5 @@ $primary-color: #34a3cf !default;
 $background-color: #f8f8f8 !default;
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
-@import "minimal-mistakes/sections"; // sections
-@import "minimal-mistakes/accordion"; // accordion
+@import "../../_saas/minimal-mistakes/sections"; // sections
+@import "../../_saas/minimal-mistakes/accordion"; // accordion
