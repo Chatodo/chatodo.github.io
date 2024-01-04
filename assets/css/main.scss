@@ -1,0 +1,12 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+search: false
+---
+
+@charset "utf-8";
+$primary-color: #34a3cf !default;
+$background-color: #f8f8f8 !default;
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
+@import "minimal-mistakes"; // main partials
+@import "../../_saas/minimal-mistakes/sections"; // sections
+@import "../../_saas/minimal-mistakes/accordion"; // accordion

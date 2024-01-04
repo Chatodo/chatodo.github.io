@@ -1,0 +1,55 @@
+.accordion {
+    margin-left: -13%;
+    width: 126%;
+}
+
+.accordion-button {
+    background-color: rgba(0,0,0,.03);
+    cursor: pointer;
+    padding: 16px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    transition: 0.4s;
+	position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    transition: background-color 0.3s ease;
+    margin: 0;
+
+}
+
+.accordion-button:hover {
+    background-color: #e2e2e2;
+}
+
+.accordion-button::after {
+    font-size: 12px;
+    position: absolute;
+    right: 20px;
+    transition: transform 0.4s;
+}
+
+.accordion-button i {
+    transition: transform 0.4s;
+}
+
+.accordion-button.active i {
+    transform: rotate(180deg);
+}
+
+.accordion-content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    color: #333;
+    background-color: #f7f7f7;
+	font-size: 0.9em;
+}
+
+.accordion-content.active {
+    display: block;
+}

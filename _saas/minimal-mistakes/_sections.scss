@@ -1,0 +1,18 @@
+.section {
+	padding: 5% 10%;
+	box-sizing: border-box;
+}
+  
+  .section:nth-child(odd) {
+	background-color: #f8f8f8;
+}
+  
+  .section:nth-child(even) {
+	background-color: #f0f4f8;
+}
+  
+  .section-title {
+	font-size: 36px;
+	text-align: center;
+	color: #333;
+}
