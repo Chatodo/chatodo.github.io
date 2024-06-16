@@ -1,18 +1,42 @@
 .section {
-	padding: 5% 10%;
+	padding: 5%;
 	box-sizing: border-box;
 }
-  
-  .section:nth-child(odd) {
+
+.section:nth-child(odd) {
 	background-color: #f8f8f8;
 }
-  
-  .section:nth-child(even) {
+
+.section:nth-child(even) {
 	background-color: #f0f4f8;
 }
-  
-  .section-title {
+
+.section-title {
 	font-size: 36px;
 	text-align: center;
 	color: #333;
+}
+
+table {
+	display: flex !important;
+	justify-content: center !important;
+}
+
+th,
+td {
+	border-bottom: 1px solid black;
+	border-right: 1px solid black;
+}
+
+.table-img {
+	width: 60px;
+	height: 60px;
+}
+
+small {
+	font-size: 10px !important;
+}
+
+.a_not{
+	text-decoration: none;
 }

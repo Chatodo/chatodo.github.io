@@ -1,20 +1,40 @@
 // Dark mode styles for sections
 .section {
-	padding: 5% 10%;
+	padding: 5%;
 	box-sizing: border-box;
-  }
-  
-  .section:nth-child(odd) {
+}
+
+.section:nth-child(odd) {
 	background-color: #242424; // Darker shade for odd sections
-  }
-  
-  .section:nth-child(even) {
+}
+
+.section:nth-child(even) {
 	background-color: #1e1e1e; // Even darker shade for even sections
-  }
-  
-  .section-title {
+}
+
+.section-title {
 	font-size: 36px;
 	text-align: center;
 	color: #e0e0e0; // Light color for titles in dark mode
-  }
-  
+}
+
+table {
+	display: flex !important;
+	justify-content: center !important;
+}
+
+th,
+td {
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+
+}
+
+.table-img {
+	width: 60px;
+	height: 60px;
+}
+
+.a_not{
+	text-decoration: none;
+}
