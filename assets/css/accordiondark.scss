@@ -16,6 +16,7 @@
 	transition: background-color 0.3s ease;
 	margin: 0;
 	color: #fff;
+	border-radius: 4px;
 }
 
 .accordion-button:hover {
@@ -44,6 +45,8 @@
 	color: #e0e0e0; // Light color for content text
 	background-color: #2a2a2a; // Dark background for content
 	font-size: 0.9em;
+	border-left: 3px solid #e2e2e2; /* Ajouter une bordure latérale pour une meilleure hiérarchie visuelle */
+    margin-left: 2px;
 }
 
 .accordion-content.active {
