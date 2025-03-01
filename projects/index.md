@@ -5,4 +5,4 @@ layout: default
 
 🍯 [My report about "Active Defense with Honeypot Network"](https://chatodo.github.io/projects/projet.pdf)
 
-🦀 [Vulnhub Write-Up - Corrosion 1](https://chatodo.github.io/projects/writeups/corrosion1_write-up.pdf)
+📁 [My Write-Up collection](https://github.com/Chatodo/chatodo.github.io/tree/main/projects/writeups)
