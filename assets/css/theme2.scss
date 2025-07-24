@@ -5,6 +5,7 @@ search: false
 
 @charset "utf-8";
 @import "sectionsdark";
-@import "accordiondark";
+@import "education-timeline-dark";
+@import "projects-dark";
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin2 | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials

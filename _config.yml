@@ -38,54 +38,54 @@ remote_theme: mmistakes/minimal-mistakes
 
 # Plugins (previously gems:)
 plugins:
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jemoji
-  - jekyll-include-cache
+    - jekyll-paginate
+    - jekyll-sitemap
+    - jekyll-gist
+    - jekyll-feed
+    - jemoji
+    - jekyll-include-cache
 
 sass:
-  sass_dir: assets/css
+    sass_dir: assets/css
 
 footer:
-  links:
-    - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin-in"
-      url: "https://www.linkedin.com/in/ivan-krivokuca/"
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/Chatodo"
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "m&#97;il&#116;o&#58;i&#118;an&#46;kr&#105;vokuca&#64;proton&#46;me"
+    links:
+        - label: "LinkedIn"
+          icon: "fab fa-fw fa-linkedin-in"
+          url: "https://www.linkedin.com/in/ivan-krivokuca/"
+        - label: "GitHub"
+          icon: "fab fa-fw fa-github"
+          url: "https://github.com/Chatodo"
+        - label: "Email"
+          icon: "fas fa-fw fa-envelope-square"
+          url: "m&#97;il&#116;o&#58;i&#118;an&#46;kr&#105;vokuca&#64;proton&#46;me"
 
 atom_feed:
-  hide: true
+    hide: true
 
 defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: true
-      share: true
-      related: true
-  # _pages
-  - scope:
-      path: "_pages"
-      type: pages
-    values:
-      layout: single
-      author_profile: true
+    # _posts
+    - scope:
+          path: ""
+          type: posts
+      values:
+          layout: single
+          author_profile: true
+          read_time: true
+          comments: true
+          share: true
+          related: true
+    # _pages
+    - scope:
+          path: "_pages"
+          type: pages
+      values:
+          layout: single
+          author_profile: true
 
 category_archive:
-  type: liquid
-  path: /categories/
+    type: liquid
+    path: /categories/
 tag_archive:
-  type: liquid
-  path: /tags/
+    type: liquid
+    path: /tags/

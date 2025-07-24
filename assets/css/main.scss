@@ -7,6 +7,7 @@ search: false
 $primary-color: #34a3cf !default;
 $background-color: #f8f8f8 !default;
 @import "sections";
-@import "accordion";
+@import "education-timeline";
+@import "projects";
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
