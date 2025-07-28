@@ -2,7 +2,7 @@
 .accordion-button {
     background: linear-gradient(
         135deg,
-        rgba(52, 163, 207, 0.1) 0%,
+        rgba(107, 70, 193, 0.1) 0%,
         rgba(0, 0, 0, 0.3) 100%
     );
     cursor: pointer;
@@ -16,7 +16,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid rgba(52, 163, 207, 0.3);
+    border: 2px solid rgba(107, 70, 193, 0.3);
     margin: 0.5rem 0;
     border-radius: 12px;
     font-weight: 500;
@@ -28,12 +28,12 @@
 .accordion-button:hover {
     background: linear-gradient(
         135deg,
-        rgba(52, 163, 207, 0.15) 0%,
+        rgba(107, 70, 193, 0.15) 0%,
         rgba(0, 0, 0, 0.4) 100%
     );
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(52, 163, 207, 0.3);
-    border-color: rgba(52, 163, 207, 0.5);
+    box-shadow: 0 8px 24px rgba(107, 70, 193, 0.3);
+    border-color: rgba(107, 70, 193, 0.5);
     color: #f0f0f0;
 }
 
@@ -45,11 +45,11 @@
 }
 
 .accordion-button i {
-    transition: transform 0.4s;
+    transition: opacity 0.4s ease;
 }
 
 .accordion-button.active i {
-    transform: rotate(180deg);
+    opacity: 0.5;
 }
 
 .accordion-content {
@@ -59,14 +59,14 @@
     color: #d0d0d0;
     background: linear-gradient(
         135deg,
-        rgba(26, 26, 26, 0.8) 0%,
-        rgba(45, 45, 45, 0.9) 100%
+        rgba(26, 22, 37, 0.85) 0%,
+        rgba(34, 27, 46, 0.95) 100%
     );
     font-size: 0.95rem;
     margin: 0.5rem 0;
     border-radius: 8px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-    border: 1px solid rgba(52, 163, 207, 0.2);
+    border: 1px solid rgba(139, 92, 246, 0.25);
     transition: all 0.4s ease;
 }
 
@@ -99,7 +99,7 @@
 .accordion-content li {
     list-style: none;
     padding: 0.5rem 0;
-    border-bottom: 1px solid rgba(52, 163, 207, 0.2);
+    border-bottom: 1px solid rgba(139, 92, 246, 0.25);
     position: relative;
     padding-left: 1.5rem;
     line-height: 1.6;
@@ -110,7 +110,7 @@
     content: "•";
     position: absolute;
     left: 0;
-    color: #34a3cf;
+    color: #8b5cf6;
     font-weight: bold;
     font-size: 1.2rem;
 }
@@ -120,13 +120,13 @@
 }
 
 .accordion-content a {
-    color: #34a3cf;
+    color: #8b5cf6;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
 }
 
 .accordion-content a:hover {
-    color: #5dade2;
+    color: #8b5cf6;
     text-decoration: underline;
 }

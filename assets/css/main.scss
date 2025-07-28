@@ -4,10 +4,15 @@ search: false
 ---
 
 @charset "utf-8";
-$primary-color: #34a3cf !default;
+$primary-color: #6b46c1 !default;
 $background-color: #f8f8f8 !default;
 @import "sections";
 @import "education-timeline";
 @import "projects";
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+// Navigation underline consistency for light mode
+.greedy-nav .visible-links a:before {
+  background: #6b46c1 !important;
+}

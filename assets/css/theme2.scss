@@ -9,3 +9,8 @@ search: false
 @import "projects-dark";
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin2 | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
+
+// Navigation underline consistency for dark mode
+.greedy-nav .visible-links a:before {
+  background: #8b5cf6 !important;
+}
