@@ -3,97 +3,58 @@ permalink: /404.html
 layout: default
 ---
 
-<style type="text/css" media="screen">
-    .container {
-        margin: 10px auto;
-        max-width: 700px;
-        text-align: center;
-        padding: 2rem;
-    }
-    .error-code {
-        margin: 30px 0 20px 0;
-        font-size: 4em;
-        line-height: 1;
-        letter-spacing: -1px;
-        color: #34a3cf;
-        font-weight: 700;
-    }
-    .cat-image {
-        max-width: 450px;
-        width: 100%;
-        border-radius: 12px;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-        margin: 2rem 0;
-    }
-    .funny-message {
-        font-size: 1.4rem;
-        color: #2c3e50;
-        margin: 1.5rem 0;
-        font-weight: 600;
-    }
-    .sub-message {
-        font-size: 1.1rem;
-        color: #5a6c7d;
-        margin: 1rem 0;
-        line-height: 1.6;
-    }
-    .tech-joke {
-        background: linear-gradient(
-            135deg,
-            rgba(52, 163, 207, 0.1) 0%,
-            rgba(52, 163, 207, 0.05) 100%
-        );
-        padding: 1.5rem;
-        border-radius: 12px;
-        margin: 2rem 0;
-        border-left: 4px solid #34a3cf;
-    }
-    .back-button {
-        display: inline-block;
-        background: linear-gradient(135deg, #34a3cf, #2980b9);
-        color: white;
-        padding: 1rem 2rem;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 600;
-        margin-top: 2rem;
-        transition: all 0.3s ease;
-        box-shadow: 0 4px 12px rgba(52, 163, 207, 0.3);
-    }
-    .back-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 16px rgba(52, 163, 207, 0.4);
-        color: white;
-        text-decoration: none;
-    }
-    @media (max-width: 768px) {
-        .error-code {
-            font-size: 3em;
-        }
-        .funny-message {
-            font-size: 1.2rem;
-        }
-        .sub-message {
-            font-size: 1rem;
-        }
-    }
-</style>
-
-<div class="container">
-    <h1 class="error-code"><strong>404</strong></h1>
-
-    <img
-        class="cat-image"
-        src="/assets/images/cat_crying.jpg"
-        alt="Sad cat looking at computer"
-    />
-
-    <div class="funny-message">Page Not Found</div>
-
-    <div class="sub-message">
-        The page you're looking for doesn't exist.<br />
-        This cat seems as confused as you are.
+<div class="section">
+    <div style="text-align: center">
+        <div
+            style="
+                font-size: 6rem;
+                font-weight: 700;
+                color: #6b46c1;
+                margin: 2rem 0;
+                line-height: 1;
+            "
+        >
+            404
+        </div>
+        <a
+            href="{{ site.url }}"
+            class="a_not"
+            style="
+                display: inline-block;
+                background: linear-gradient(135deg, #6b46c1, #553c9a);
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 6px;
+                text-decoration: none;
+                font-weight: 600;
+                margin-top: 2rem;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 12px rgba(107, 70, 193, 0.2);
+            "
+        >
+            🏠 Back to Home
+        </a>
+        <br />
+        <div
+            style="
+                font-size: 1.3rem;
+                font-weight: 600;
+                color: #2c3e50;
+                margin: 1.5rem 0;
+            "
+        >
+            Oops! Page Not Found
+        </div>
+        <img
+            src="/assets/images/cat_crying.jpg"
+            alt="Sad cat looking at computer"
+            style="
+                max-width: 400px;
+                width: 100%;
+                border-radius: 12px;
+                margin: 2rem 0;
+                box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            "
+        />
     </div>
-
-    <a href="{{ site.url }}" class="back-button"> Back to Home </a>
 </div>
