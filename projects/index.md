@@ -120,7 +120,7 @@ layout: default
         </div>
         <div class="project-links">
           <a
-            href="/assets/files/projet.pdf"
+            href="/assets/files/honeypots.pdf"
             class="project-link primary"
             target="_blank"
           >
