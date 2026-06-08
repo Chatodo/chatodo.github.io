@@ -14,7 +14,7 @@ layout: default
         <div class="project-icon">
           <i class="fas fa-graduation-cap" aria-hidden="true"></i>
         </div>
-        <h3 class="project-title">Master's Thesis Research</h3>
+        <h2 class="project-title">Master's Thesis Research</h2>
         <p class="project-description">
           Analyzed hardware and firmware security against low-level threats —
           TPM 2.0, Secure Boot, and defense architectures across x86/x64 and
@@ -31,7 +31,7 @@ layout: default
           <a
             href="{{ '/assets/files/mémoire.pdf' | relative_url }}"
             class="project-link primary"
-            target="_blank"
+            target="_blank" rel="noopener"
           >
             <i class="fas fa-file-pdf" aria-hidden="true"></i>
             Read Full Research
@@ -42,7 +42,7 @@ layout: default
         <div class="project-icon">
           <i class="fas fa-flask" aria-hidden="true"></i>
         </div>
-        <h3 class="project-title">SEED Security Labs</h3>
+        <h2 class="project-title">SEED Security Labs</h2>
         <p class="project-description">
           Exploited vulnerable Set-UID binaries via stack-based buffer overflows
           and environment-variable attacks, and examined the stack-protection
@@ -58,7 +58,7 @@ layout: default
           <a
             href="{{ '/assets/files/SEED_Buffer%20Overflow%20Attack%20Lab.pdf' | relative_url }}"
             class="project-link primary"
-            target="_blank"
+            target="_blank" rel="noopener"
           >
             <i class="fas fa-file-pdf" aria-hidden="true"></i>
             Buffer Overflow Lab
@@ -66,7 +66,7 @@ layout: default
           <a
             href="{{ '/assets/files/SEED_Environment%20Variable%20and%20Set-UID.pdf' | relative_url }}"
             class="project-link secondary"
-            target="_blank"
+            target="_blank" rel="noopener"
           >
             <i class="fas fa-file-pdf" aria-hidden="true"></i>
             Environment Variable Lab
@@ -82,7 +82,7 @@ layout: default
         <div class="project-icon">
           <i class="fas fa-chart-line" aria-hidden="true"></i>
         </div>
-        <h3 class="project-title">QRadar SIEM</h3>
+        <h2 class="project-title">QRadar SIEM</h2>
         <p class="project-description">
           Built threat-detection rules, custom dashboards, and security
           analytics on the IBM QRadar SIEM platform, as part of an academic SOC
@@ -98,7 +98,7 @@ layout: default
           <a
             href="{{ '/assets/files/qradar_contribution.pdf' | relative_url }}"
             class="project-link primary"
-            target="_blank"
+            target="_blank" rel="noopener"
           >
             <i class="fas fa-file-pdf" aria-hidden="true"></i>
             View Contribution
@@ -109,7 +109,7 @@ layout: default
         <div class="project-icon">
           <i class="fas fa-shield-alt" aria-hidden="true"></i>
         </div>
-        <h3 class="project-title">Active Defense with a Honeypot Network</h3>
+        <h2 class="project-title">Active Defense with a Honeypot Network</h2>
         <p class="project-description">
           Deployed a multi-level honeypot infrastructure on the T-Pot platform
           (Dionaea, Cowrie, Pentbox) and analyzed real-world attacks — EternalBlue
@@ -127,7 +127,7 @@ layout: default
           <a
             href="{{ '/assets/files/honeypots.pdf' | relative_url }}"
             class="project-link primary"
-            target="_blank"
+            target="_blank" rel="noopener"
           >
             <i class="fas fa-file-pdf" aria-hidden="true"></i>
             Read Report
@@ -135,7 +135,7 @@ layout: default
           <a
             href="https://raw.githubusercontent.com/Chatodo/chatodo.github.io/refs/heads/main/projects/honey_ssh.sh"
             class="project-link secondary"
-            target="_blank"
+            target="_blank" rel="noopener"
           >
             <i class="fas fa-code" aria-hidden="true"></i>
             View Script
@@ -151,7 +151,7 @@ layout: default
         <div class="project-icon">
           <i class="fas fa-cubes" aria-hidden="true"></i>
         </div>
-        <h3 class="project-title">Secure Microservices Architecture</h3>
+        <h2 class="project-title">Secure Microservices Architecture</h2>
         <p class="project-description">
           Designed and secured a containerized microservices stack (Flask API,
           Nginx frontend, MySQL) with an Istio service mesh enforcing mTLS, load
@@ -169,7 +169,7 @@ layout: default
           <a
             href="https://github.com/Chatodo/kubernetes-projet"
             class="project-link primary"
-            target="_blank"
+            target="_blank" rel="noopener"
           >
             <i class="fab fa-github" aria-hidden="true"></i>
             View on GitHub
@@ -180,7 +180,7 @@ layout: default
         <div class="project-icon">
           <i class="fas fa-network-wired" aria-hidden="true"></i>
         </div>
-        <h3 class="project-title">VPN &amp; IPsec Implementation</h3>
+        <h2 class="project-title">VPN &amp; IPsec Implementation</h2>
         <p class="project-description">
           Configured and tested IPsec VPN tunnels, covering key exchange,
           encryption, and the tunnel/transport security architecture; documented
@@ -196,7 +196,7 @@ layout: default
           <a
             href="{{ '/assets/files/vpn_ipsec_tp_presentation.pdf' | relative_url }}"
             class="project-link primary"
-            target="_blank"
+            target="_blank" rel="noopener"
           >
             <i class="fas fa-file-pdf" aria-hidden="true"></i>
             View Presentation
@@ -212,7 +212,7 @@ layout: default
         <div class="project-icon">
           <i class="fas fa-flag" aria-hidden="true"></i>
         </div>
-        <h3 class="project-title">CTF &amp; HackTheBox Write-ups</h3>
+        <h2 class="project-title">CTF &amp; HackTheBox Write-ups</h2>
         <p class="project-description">
           Step-by-step write-ups of machine compromises — enumeration,
           exploitation, and privilege escalation to root — plus ongoing
@@ -228,7 +228,7 @@ layout: default
           <a
             href="https://github.com/Chatodo/chatodo.github.io/tree/main/projects/writeups"
             class="project-link primary"
-            target="_blank"
+            target="_blank" rel="noopener"
           >
             <i class="fab fa-github" aria-hidden="true"></i>
             View All Write-ups
@@ -236,7 +236,7 @@ layout: default
           <a
             href="{{ '/assets/files/HTB.pdf' | relative_url }}"
             class="project-link secondary"
-            target="_blank"
+            target="_blank" rel="noopener"
           >
             <i class="fas fa-chart-line" aria-hidden="true"></i>
             HTB Academy Progress
@@ -247,7 +247,7 @@ layout: default
         <div class="project-icon">
           <i class="fas fa-folder-open" aria-hidden="true"></i>
         </div>
-        <h3 class="project-title">Bachelor's Degree Projects</h3>
+        <h2 class="project-title">Bachelor's Degree Projects</h2>
         <p class="project-description">
           Undergraduate projects in C and Java: data-structure &amp; algorithm
           implementations, low-level systems and network programming, and web
@@ -264,7 +264,7 @@ layout: default
           <a
             href="https://github.com/Chatodo/Projets-Licence/blob/main/README_EN.md"
             class="project-link primary"
-            target="_blank"
+            target="_blank" rel="noopener"
           >
             <i class="fab fa-github" aria-hidden="true"></i>
             View Projects

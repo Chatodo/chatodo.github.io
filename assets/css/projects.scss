@@ -149,7 +149,8 @@
     font-family: var(--font-mono);
     font-weight: 500;
     font-size: 0.82rem;
-    transition: all var(--transition);
+    transition: background-color var(--transition), border-color var(--transition),
+        box-shadow var(--transition);
     border: 1px solid transparent;
 }
 

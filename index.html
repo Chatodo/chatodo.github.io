@@ -23,8 +23,8 @@ layout: default
     </div>
 </header>
 
-<section class="section reveal">
-    <h2 class="section-title">About</h2>
+<section class="section reveal" aria-labelledby="about-title">
+    <h2 class="section-title" id="about-title">About</h2>
     <div class="about-content">
         <p>
             I'm a <strong>Security &amp; Development Engineer</strong> based in
@@ -42,8 +42,8 @@ layout: default
     </div>
 </section>
 
-<section class="section reveal" id="experience">
-    <h2 class="section-title">Experience</h2>
+<section class="section reveal" id="experience" aria-labelledby="experience-title">
+    <h2 class="section-title" id="experience-title">Experience</h2>
 
     <div class="experience-list">
         <article class="xp-card">
@@ -94,8 +94,8 @@ layout: default
     </div>
 </section>
 
-<section class="section reveal">
-    <h2 class="section-title">Technical Skills</h2>
+<section class="section reveal" aria-labelledby="skills-title">
+    <h2 class="section-title" id="skills-title">Technical Skills</h2>
 
     <div class="skills-container">
         <div class="skill-category">
@@ -103,7 +103,7 @@ layout: default
             <div class="skill-icons">
                 <img
                     class="skill-icon"
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg"
+                    src="https://skillicons.dev/icons?i=c"
                     alt="C"
                     title="C"
                     loading="lazy"
@@ -112,13 +112,10 @@ layout: default
                     class="skill-icon cpp-easter-egg"
                     src="https://skillicons.dev/icons?i=cpp"
                     alt="C++"
-                    title="C++ (click me!)"
+                    title="C++"
                     role="button"
                     tabindex="0"
-                    aria-label="C++ — show the cat meme"
-                    onclick="showCppMeme()"
-                    onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showCppMeme();}"
-                    style="cursor: pointer"
+                    aria-label="C++ — open the cat meme"
                     loading="lazy"
                 />
                 <img
@@ -301,8 +298,8 @@ layout: default
     </div>
 </section>
 
-<section class="section reveal">
-    <h2 class="section-title">Education</h2>
+<section class="section reveal" aria-labelledby="education-title">
+    <h2 class="section-title" id="education-title">Education</h2>
 
     <div class="education-timeline">
         <div class="timeline-item">
@@ -422,113 +419,20 @@ layout: default
     </div>
 </section>
 
-<!-- Hidden C++ Meme Modal -->
+<!-- C++ easter-egg modal (behaviour lives in assets/js/site.js) -->
 <div
     id="cpp-meme-modal"
+    class="cpp-modal"
     role="dialog"
     aria-modal="true"
     aria-label="C++ cat meme"
-    style="
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        z-index: 9999;
-        justify-content: center;
-        align-items: center;
-    "
-    onclick="hideCppMeme()"
 >
-    <div style="position: relative; max-width: 90%; max-height: 90%">
+    <div class="cpp-modal__inner">
         <img
+            class="cpp-modal__img"
             src="{{ '/assets/images/cat_c++.jpg' | relative_url }}"
-            style="
-                max-width: 100%;
-                max-height: 100%;
-                border-radius: 12px;
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-            "
-            alt="C++ Cat Meme"
+            alt="C++ cat meme"
         />
-        <button
-            onclick="hideCppMeme()"
-            aria-label="Close"
-            style="
-                position: absolute;
-                top: -10px;
-                right: -10px;
-                background: #ff4757;
-                color: white;
-                border: none;
-                border-radius: 50%;
-                width: 30px;
-                height: 30px;
-                cursor: pointer;
-                font-size: 18px;
-                font-weight: bold;
-            "
-        >
-            ×
-        </button>
+        <button type="button" class="cpp-modal__close" aria-label="Close">×</button>
     </div>
 </div>
-
-<script>
-    let cppLastFocus = null;
-    function cppOnKeydown(e) {
-        if (e.key === "Escape") hideCppMeme();
-    }
-    function prefersReducedMotion() {
-        return (
-            window.matchMedia &&
-            window.matchMedia("(prefers-reduced-motion: reduce)").matches
-        );
-    }
-
-    function showCppMeme() {
-        const modal = document.getElementById("cpp-meme-modal");
-        cppLastFocus = document.activeElement;
-        modal.style.display = "flex";
-        document.body.style.overflow = "hidden";
-        document.addEventListener("keydown", cppOnKeydown);
-
-        const closeBtn = modal.querySelector("button");
-        if (closeBtn) closeBtn.focus();
-
-        const img = modal.querySelector("img");
-        if (prefersReducedMotion()) {
-            img.style.transform = "none";
-            img.style.opacity = "1";
-            return;
-        }
-        img.style.transform = "scale(0.8)";
-        img.style.opacity = "0";
-        img.style.transition = "transform 0.4s ease-out, opacity 0.4s ease-out";
-        setTimeout(() => {
-            img.style.transform = "scale(1)";
-            img.style.opacity = "1";
-        }, 10);
-    }
-
-    function hideCppMeme() {
-        const modal = document.getElementById("cpp-meme-modal");
-        const img = modal.querySelector("img");
-        document.removeEventListener("keydown", cppOnKeydown);
-
-        const finish = () => {
-            modal.style.display = "none";
-            document.body.style.overflow = "auto";
-            if (cppLastFocus && cppLastFocus.focus) cppLastFocus.focus();
-        };
-        if (prefersReducedMotion()) {
-            finish();
-            return;
-        }
-        img.style.transform = "scale(0.8)";
-        img.style.opacity = "0";
-        setTimeout(finish, 400);
-    }
-</script>

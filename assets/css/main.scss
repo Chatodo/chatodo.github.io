@@ -32,7 +32,6 @@ search: false
     --glow: 0 4px 20px rgba(124, 58, 237, 0.14);
 
     --grid-line: rgba(15, 23, 42, 0.045);
-    --term-dot: #cbd5e1;
 }
 
 @import "tokens"; // shared structural tokens
@@ -45,8 +44,3 @@ search: false
 @import "experience";
 @import "education-timeline";
 @import "projects";
-
-// Navigation underline consistency
-.greedy-nav .visible-links a:before {
-    background: var(--accent) !important;
-}

@@ -1,13 +1,6 @@
 <meta charset="utf-8" />
 
-{% include seo.html %} {% unless site.atom_feed.hide %}
-<link
-    href="{% if site.atom_feed.path %}{{ site.atom_feed.path }}{% else %}{{ '/feed.xml' | relative_url }}{% endif %}"
-    type="application/atom+xml"
-    rel="alternate"
-    title="{{ site.title }} Feed"
-/>
-{% endunless %}
+{% include seo.html %}
 
 <!-- Favicon -->
 {% if site.favicon %}
@@ -65,17 +58,21 @@
 </script>
 {% endif %}
 
-<!-- FontAwesome (loaded asynchronously) -->
+<!-- External icon CDNs: warm up the connections early -->
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+<link rel="dns-prefetch" href="https://skillicons.dev" />
+
+<!-- FontAwesome (exact-pinned, loaded asynchronously) -->
 <link
     rel="preload"
-    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
+    href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"
     as="style"
     onload="this.onload=null;this.rel='stylesheet'"
 />
 <noscript
     ><link
         rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"
 /></noscript>
 
 <!-- Site behaviour: theme toggle + scroll reveal -->
