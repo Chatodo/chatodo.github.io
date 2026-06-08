@@ -1,7 +1,5 @@
 # Site settings
 title: "Ivan Krivokuca"
-description: "Ivan Krivokuca — Security & Development Engineer. Cybersecurity, embedded systems, secure coding, and reverse engineering."
-url: "https://chatodo.github.io"
 baseurl: ""
 github_username: Chatodo
 minimal_mistakes_skin: air
@@ -29,7 +27,6 @@ exclude:
 
 # Plugins
 plugins:
-    - jekyll-sitemap
     - jemoji
     - jekyll-include-cache
 

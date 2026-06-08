@@ -1,6 +1,8 @@
 <meta charset="utf-8" />
 
-{% include seo.html %}
+<title>{{ page.title | default: site.title }}</title>
+<!-- Showcase site reached via direct links — keep it out of search engines -->
+<meta name="robots" content="noindex, nofollow" />
 
 <!-- Favicon -->
 {% if site.favicon %}
