@@ -2,32 +2,100 @@
 layout: default
 ---
 
-<div class="section">
-    <div class="section-title">About me</div>
+<header class="hero">
+    <p class="hero-eyebrow">$ whoami</p>
+    <h1 class="hero-name">Ivan Krivokuca</h1>
+    <p class="hero-role">Security &amp; Development Engineer</p>
+    <p class="hero-tagline">
+        Secure coding, embedded/IoT device security, and reverse engineering —
+        M.Sc. Cybersecurity, Université Paris Cité.
+    </p>
+    <div class="hero-actions">
+        <a class="btn btn-primary" href="{{ '/projects/' | relative_url }}">
+            <i class="fas fa-folder-open" aria-hidden="true"></i> View projects
+        </a>
+        <a class="btn btn-ghost" href="{{ '/assets/files/CV.pdf' | relative_url }}">
+            <i class="fas fa-file-pdf" aria-hidden="true"></i> Download CV
+        </a>
+        <a class="btn btn-ghost" href="https://github.com/Chatodo" rel="noopener">
+            <i class="fab fa-github" aria-hidden="true"></i> GitHub
+        </a>
+    </div>
+</header>
+
+<section class="section reveal">
+    <h2 class="section-title">About</h2>
     <div class="about-content">
         <p>
-            🎓 Recently graduated with a Master's in Computer Science,
-            <strong>specializing in Cybersecurity and e-Health</strong> from
-            Université Paris Cité.
+            I'm a <strong>Security &amp; Development Engineer</strong> based in
+            Île-de-France, working on the security of
+            <strong>IoT &amp; embedded devices</strong>,
+            <strong>secure coding</strong>, and
+            <strong>reverse engineering</strong> — with hands-on experience
+            porting secure embedded systems and integrating cryptographic
+            modules onto constrained hardware.
         </p>
-
         <p>
-            🔒 Passionate about IT/Cybersecurity, with a particular focus on
-            <strong>Internet of Things devices</strong>,
-            <strong>Secure Coding</strong>, and
-            <strong>Reverse Engineering</strong>.
-        </p>
-
-        <p>
-            🛡️ Continuously enhancing my practical security skills through
-            HackTheBox Academy.
-            <a class="a_not" href="/assets/files/HTB.pdf">Check my progress</a>
+            I hold an M.Sc. in Computer Science with a specialization in
+            Cybersecurity (and e-Health) from Université Paris Cité.
         </p>
     </div>
-</div>
+</section>
 
-<div class="section">
-    <div class="section-title">💻 Technical Skills</div>
+<section class="section reveal" id="experience">
+    <h2 class="section-title">Experience</h2>
+
+    <div class="experience-list">
+        <article class="xp-card">
+            <div class="xp-head">
+                <span class="xp-role">Embedded Development Engineer</span>
+                <span class="xp-type">Apprenticeship</span>
+            </div>
+            <div class="xp-date">Sep 2024 – Sep 2025</div>
+            <ul class="xp-bullets">
+                <li>
+                    Ported an embedded DBMS across STM32 architectures with
+                    cryptographic security-module integration.
+                </li>
+                <li>
+                    Applied secure coding practices in constrained, bare-metal C
+                    environments.
+                </li>
+                <li>
+                    Carried out validation testing and performance optimization
+                    on resource-limited hardware.
+                </li>
+            </ul>
+            <div class="xp-stack">
+                <span>C</span><span>STM32</span><span>Embedded DBMS</span><span>Cryptography</span><span>Secure coding</span>
+            </div>
+        </article>
+
+        <article class="xp-card">
+            <div class="xp-head">
+                <span class="xp-role">Web Developer</span>
+                <span class="xp-type">Internship</span>
+            </div>
+            <div class="xp-date">May 2022 – Jul 2022</div>
+            <ul class="xp-bullets">
+                <li>
+                    Built an e-learning platform — jQuery / Bootstrap front-end,
+                    PHP / MySQL back-end.
+                </li>
+                <li>
+                    Conducted security audits on WordPress sites and remediated
+                    vulnerabilities.
+                </li>
+            </ul>
+            <div class="xp-stack">
+                <span>PHP</span><span>MySQL</span><span>jQuery</span><span>Bootstrap</span><span>WordPress</span>
+            </div>
+        </article>
+    </div>
+</section>
+
+<section class="section reveal">
+    <h2 class="section-title">Technical Skills</h2>
 
     <div class="skills-container">
         <div class="skill-category">
@@ -38,104 +106,124 @@ layout: default
                     src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg"
                     alt="C"
                     title="C"
+                    loading="lazy"
                 />
                 <img
                     class="skill-icon cpp-easter-egg"
                     src="https://skillicons.dev/icons?i=cpp"
                     alt="C++"
                     title="C++ (click me!)"
+                    role="button"
+                    tabindex="0"
+                    aria-label="C++ — show the cat meme"
                     onclick="showCppMeme()"
+                    onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();showCppMeme();}"
                     style="cursor: pointer"
+                    loading="lazy"
                 />
                 <img
                     class="skill-icon"
                     src="https://skillicons.dev/icons?i=python"
                     alt="Python"
                     title="Python"
+                    loading="lazy"
                 />
                 <img
                     class="skill-icon"
-                    src="https://skillicons.dev/icons?i=java&theme=light"
+                    src="https://skillicons.dev/icons?i=java"
                     alt="Java"
                     title="Java"
+                    loading="lazy"
                 />
                 <img
                     class="skill-icon"
                     src="https://skillicons.dev/icons?i=bash"
                     alt="Bash/Shell"
                     title="Bash/Shell"
+                    loading="lazy"
                 />
                 <img
                     class="skill-icon"
                     src="https://skillicons.dev/icons?i=php"
                     alt="PHP"
                     title="PHP"
+                    loading="lazy"
                 />
                 <img
                     class="skill-icon"
                     src="https://skillicons.dev/icons?i=mysql"
                     alt="SQL"
                     title="SQL"
+                    loading="lazy"
                 />
                 <img
                     class="skill-icon"
                     src="https://skillicons.dev/icons?i=javascript"
                     alt="JavaScript"
                     title="JavaScript"
+                    loading="lazy"
                 />
                 <img
                     class="skill-icon"
-                    src="https://skillicons.dev/icons?i=matlab&theme=light"
+                    src="https://skillicons.dev/icons?i=matlab"
                     alt="MATLAB"
                     title="MATLAB"
+                    loading="lazy"
                 />
                 <img
                     class="skill-icon"
-                    src="https://skillicons.dev/icons?i=r&theme=light"
+                    src="https://skillicons.dev/icons?i=r"
                     alt="R"
                     title="R"
+                    loading="lazy"
                 />
                 <img
                     class="skill-icon"
                     src="https://skillicons.dev/icons?i=ocaml"
                     alt="OCaml"
                     title="OCaml"
+                    loading="lazy"
                 />
             </div>
         </div>
 
         <div class="skill-category">
-            <h3>DevOps & Infrastructure</h3>
+            <h3>DevOps &amp; Infrastructure</h3>
             <div class="skill-icons">
                 <img
                     class="skill-icon"
                     src="https://skillicons.dev/icons?i=docker"
                     alt="Docker"
                     title="Docker"
+                    loading="lazy"
                 />
                 <img
                     class="skill-icon"
                     src="https://skillicons.dev/icons?i=kubernetes"
                     alt="Kubernetes"
                     title="Kubernetes"
+                    loading="lazy"
                 />
                 <img
                     class="skill-icon"
                     src="https://skillicons.dev/icons?i=git"
                     alt="Git"
                     title="Git"
+                    loading="lazy"
                 />
                 <img
                     class="skill-icon"
                     src="https://skillicons.dev/icons?i=linux"
                     alt="Linux Administration"
                     title="Linux Administration"
+                    loading="lazy"
                 />
                 <img
                     class="skill-icon"
-                    src="https://skillicons.dev/icons?i=vscode&theme=light"
+                    src="https://skillicons.dev/icons?i=vscode"
                     alt="VS Code"
                     title="VS Code"
+                    loading="lazy"
                 />
             </div>
         </div>
@@ -143,7 +231,7 @@ layout: default
 
     <div class="detailed-skills">
         <div class="skill-section">
-            <h4>🔒 Security Tools & Frameworks</h4>
+            <h4>Security Tools &amp; Frameworks</h4>
             <div class="skill-tags">
                 <span class="skill-tag">Metasploit</span>
                 <span class="skill-tag">Nmap</span>
@@ -153,14 +241,11 @@ layout: default
                 <span class="skill-tag">Ghidra</span>
                 <span class="skill-tag">gdb</span>
                 <span class="skill-tag">OpenSSL</span>
-                <span class="skill-tag">Nessus</span>
-                <span class="skill-tag">Volatility</span>
-                <span class="skill-tag">Autopsy</span>
             </div>
         </div>
 
         <div class="skill-section">
-            <h4>🛡️ Security Solutions & Enterprise</h4>
+            <h4>Security Solutions &amp; Enterprise</h4>
             <div class="skill-tags">
                 <span class="skill-tag">SIEM (QRadar, Splunk, ELK)</span>
                 <span class="skill-tag">IDS/IPS (Suricata)</span>
@@ -170,7 +255,7 @@ layout: default
         </div>
 
         <div class="skill-section">
-            <h4>⚔️ Technical Expertise</h4>
+            <h4>Technical Expertise</h4>
             <div class="skill-tags">
                 <span class="skill-tag">Penetration Testing</span>
                 <span class="skill-tag">Vulnerability Assessment</span>
@@ -183,113 +268,114 @@ layout: default
         </div>
 
         <div class="skill-section">
-            <h4>🏗️ Infrastructure & DevOps</h4>
+            <h4>Infrastructure &amp; DevOps</h4>
             <div class="skill-tags">
                 <span class="skill-tag">Docker</span>
                 <span class="skill-tag">Kubernetes</span>
-                <span class="skill-tag">VMware/VirtualBox</span>
                 <span class="skill-tag">Service Mesh (Istio)</span>
                 <span class="skill-tag">mTLS Encryption</span>
                 <span class="skill-tag">RBAC Policies</span>
-                <span class="skill-tag">TLS Certificates</span>
                 <span class="skill-tag">Secrets Management</span>
-                <span class="skill-tag">Linux Administration</span>
             </div>
         </div>
 
         <div class="skill-section">
-            <h4>⚡ High Performance Computing & Data Analysis</h4>
-            <div class="skill-tags">
-                <span class="skill-tag"
-                    >Parallel Programming (OpenMP, MPI, AVX)</span
-                >
-                <span class="skill-tag">Pandas</span>
-                <span class="skill-tag">NumPy</span>
-                <span class="skill-tag">Scikit-learn</span>
-                <span class="skill-tag">Anomaly Detection</span>
-                <span class="skill-tag">Threat Detection</span>
-            </div>
-        </div>
-
-        <div class="skill-section">
-            <h4>📜 Certifications & Training</h4>
+            <h4>Certifications &amp; Training</h4>
             <div class="skill-tags">
                 <span class="skill-tag">MOOC ANSSI</span>
                 <span class="skill-tag">CNIL</span>
                 <span class="skill-tag">CEH Preparation</span>
-                <span class="skill-tag">Cisco CCNA Security Preparation</span>
+                <span class="skill-tag">Cisco CCNA Security</span>
+            </div>
+        </div>
+
+        <div class="skill-section">
+            <h4>Languages</h4>
+            <div class="languages">
+                <span class="lang"><b>French</b> <span class="lvl">Native</span></span>
+                <span class="lang"><b>English</b> <span class="lvl">Professional · C1</span></span>
+                <span class="lang"><b>German</b> <span class="lvl">Basic</span></span>
+                <span class="lang"><b>Serbian</b> <span class="lvl">Basic</span></span>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="section">
-    <div class="section-title">🎓 Educational Background</div>
+<section class="section reveal">
+    <h2 class="section-title">Education</h2>
 
     <div class="education-timeline">
         <div class="timeline-item">
             <div class="timeline-marker">
-                <i class="fas fa-graduation-cap"></i>
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
             </div>
             <div class="timeline-content">
-                <div class="education-period">2023-2025</div>
+                <div class="education-period">2024 – 2025</div>
                 <div class="education-title">
-                    Master's Degree in Cybersecurity and e-health
+                    M.Sc. in Computer Science — Cybersecurity (Apprenticeship)
                 </div>
                 <div class="education-institution">Université Paris Cité</div>
-                <div class="education-description">
-                    <a
-                        class="education-link"
-                        href="https://biomedicale.u-paris.fr/master-informatique/master-informatique-parcours-cybersecurite-et-esante/"
-                        >Program Details (French)</a
-                    >
-                </div>
-                <div class="coursework-title">
-                    Relevant Security Coursework:
-                </div>
+                <span class="education-honours">With Highest Honors</span>
+                <div class="coursework-title">Relevant security coursework</div>
                 <ul class="coursework-list">
-                    <li>
-                        Advanced Network Security (Firewall Configuration,
-                        IDS/IPS Setup)
-                    </li>
-                    <li>Ethical Hacking Methodologies CEH</li>
+                    <li>Advanced Network Security (Firewalls, IDS/IPS)</li>
+                    <li>Ethical Hacking Methodologies (CEH)</li>
                     <li>Security Tool Development (Python)</li>
                     <li>Malware Analysis Techniques</li>
-                    <li>SOC/SIEM</li>
-                    <li>Healthcare-specific Challenges and Norms</li>
                 </ul>
             </div>
         </div>
 
         <div class="timeline-item">
             <div class="timeline-marker">
-                <i class="fas fa-square-root-alt"></i>
+                <i class="fas fa-shield-alt" aria-hidden="true"></i>
             </div>
             <div class="timeline-content">
-                <div class="education-period">2022-2023</div>
+                <div class="education-period">2023 – 2024</div>
                 <div class="education-title">
-                    Master CCA (Cryptology, High-performance Computing, and
-                    Algorithms)
+                    M1 in Computer Science — Cybersecurity &amp; e-Health
+                </div>
+                <div class="education-institution">Université Paris Cité</div>
+                <span class="education-honours">With Honors</span>
+                <div class="education-description">
+                    <a
+                        class="education-link"
+                        href="https://biomedicale.u-paris.fr/master-informatique/master-informatique-parcours-cybersecurite-et-esante/"
+                        rel="noopener"
+                        >Program details (French)</a
+                    >
+                </div>
+                <div class="coursework-title">Relevant coursework</div>
+                <ul class="coursework-list">
+                    <li>SOC/SIEM operations</li>
+                    <li>Healthcare-specific security challenges &amp; standards</li>
+                    <li>Reverse engineering</li>
+                    <li>Secure software development</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="timeline-item">
+            <div class="timeline-marker">
+                <i class="fas fa-square-root-alt" aria-hidden="true"></i>
+            </div>
+            <div class="timeline-content">
+                <div class="education-period">2022 – 2023</div>
+                <div class="education-title">
+                    M1 — Cryptology, High-Performance Computing &amp; Algorithmics
                 </div>
                 <div class="education-institution">Sorbonne University</div>
                 <div class="education-description">
-                    <a class="education-link" href="https://cca.lip6.fr/en/"
-                        >Program Details</a
+                    <a class="education-link" href="https://cca.lip6.fr/en/" rel="noopener"
+                        >Program details</a
                     >
-                    - First year completed with focus on cryptography and
-                    security
                 </div>
-                <div class="coursework-title">Core Coursework:</div>
+                <div class="coursework-title">Core coursework</div>
                 <ul class="coursework-list">
-                    <li>Complexity, Randomized and Approximation Algorithms</li>
-                    <li>Numerical and Symbolic Algorithm Modeling</li>
-                    <li>
-                        Numerical Algorithms (Gradient Descent, Newton's Method,
-                        etc.)
-                    </li>
-                    <li>
-                        Fundamentals of Algebraic Algorithms (GCD, FFT, etc.)
-                    </li>
+                    <li>Complexity, Randomized &amp; Approximation Algorithms</li>
+                    <li>Numerical &amp; Symbolic Algorithm Modeling</li>
+                    <li>Numerical Algorithms (Gradient Descent, Newton)</li>
+                    <li>Algebraic Algorithms (GCD, FFT)</li>
                     <li>Cryptology</li>
                     <li>Parallel Programming (OpenMP, MPI, AVX2)</li>
                     <li>Linux Kernel Programming</li>
@@ -301,49 +387,47 @@ layout: default
 
         <div class="timeline-item">
             <div class="timeline-marker">
-                <i class="fas fa-code"></i>
+                <i class="fas fa-code" aria-hidden="true"></i>
             </div>
             <div class="timeline-content">
-                <div class="education-period">2018-2022</div>
+                <div class="education-period">2018 – 2022</div>
                 <div class="education-title">
                     Bachelor's Degree in Computer Science
                 </div>
-                <div class="education-institution">Sorbonne Paris Nord</div>
+                <div class="education-institution">
+                    Université Sorbonne Paris Nord — Institut Galilée
+                </div>
+                <span class="education-honours">With Honors</span>
                 <div class="education-description">
                     <a
                         class="education-link"
                         href="https://galilee.univ-paris13.fr/wp-content/uploads/licence_INFO.pdf"
-                        >Program Details (French)</a
+                        rel="noopener"
+                        >Program details (French)</a
                     >
                 </div>
-                <div class="coursework-title">Key Areas of Study:</div>
+                <div class="coursework-title">Key areas of study</div>
                 <ul class="coursework-list">
-                    <li>
-                        Algebra, Analysis, Probability & Statistics, Language
-                        Theory, Graph Theory
-                    </li>
-                    <li>
-                        Algorithm Design, Imperative Programming and Data
-                        Structures
-                    </li>
-                    <li>
-                        Systems and Networks (C), Functional Programming (OCaml)
-                    </li>
-                    <li>
-                        Object-Oriented Programming (Java), Web Programming (JS,
-                        PHP)
-                    </li>
+                    <li>Algebra, Analysis, Probability &amp; Statistics</li>
+                    <li>Language &amp; Graph Theory</li>
+                    <li>Algorithm Design &amp; Data Structures</li>
+                    <li>Systems &amp; Networks (C), Functional Programming (OCaml)</li>
+                    <li>Object-Oriented Programming (Java)</li>
+                    <li>Web Programming (JS, PHP)</li>
                     <li>Unix Programming, System Administration (Linux)</li>
                     <li>Data Visualization</li>
                 </ul>
             </div>
         </div>
     </div>
-</div>
+</section>
 
 <!-- Hidden C++ Meme Modal -->
 <div
     id="cpp-meme-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-label="C++ cat meme"
     style="
         display: none;
         position: fixed;
@@ -371,6 +455,7 @@ layout: default
         />
         <button
             onclick="hideCppMeme()"
+            aria-label="Close"
             style="
                 position: absolute;
                 top: -10px;
@@ -392,13 +477,33 @@ layout: default
 </div>
 
 <script>
+    let cppLastFocus = null;
+    function cppOnKeydown(e) {
+        if (e.key === "Escape") hideCppMeme();
+    }
+    function prefersReducedMotion() {
+        return (
+            window.matchMedia &&
+            window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        );
+    }
+
     function showCppMeme() {
         const modal = document.getElementById("cpp-meme-modal");
+        cppLastFocus = document.activeElement;
         modal.style.display = "flex";
         document.body.style.overflow = "hidden";
+        document.addEventListener("keydown", cppOnKeydown);
 
-        // Smooth fade and scale animation
+        const closeBtn = modal.querySelector("button");
+        if (closeBtn) closeBtn.focus();
+
         const img = modal.querySelector("img");
+        if (prefersReducedMotion()) {
+            img.style.transform = "none";
+            img.style.opacity = "1";
+            return;
+        }
         img.style.transform = "scale(0.8)";
         img.style.opacity = "0";
         img.style.transition = "transform 0.4s ease-out, opacity 0.4s ease-out";
@@ -411,12 +516,19 @@ layout: default
     function hideCppMeme() {
         const modal = document.getElementById("cpp-meme-modal");
         const img = modal.querySelector("img");
+        document.removeEventListener("keydown", cppOnKeydown);
 
-        img.style.transform = "scale(0.8)";
-        img.style.opacity = "0";
-        setTimeout(() => {
+        const finish = () => {
             modal.style.display = "none";
             document.body.style.overflow = "auto";
-        }, 400);
+            if (cppLastFocus && cppLastFocus.focus) cppLastFocus.focus();
+        };
+        if (prefersReducedMotion()) {
+            finish();
+            return;
+        }
+        img.style.transform = "scale(0.8)";
+        img.style.opacity = "0";
+        setTimeout(finish, 400);
     }
 </script>

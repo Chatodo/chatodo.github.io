@@ -15,7 +15,6 @@
 <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | relative_url }}">
 {% endif %}
 
-<!-- https://t.co/dKP3o1e -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 <script>
@@ -23,7 +22,15 @@
         document.documentElement.className.replace(/\bno-js\b/g, "") + " js ";
 </script>
 
-<!-- For all browsers -->
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+/>
+
+<!-- Theme stylesheets (light = main.css, dark = theme2.css) -->
 <link
     rel="stylesheet"
     href="{{ '/assets/css/main.css' | relative_url }}"
@@ -36,28 +43,29 @@
     id="theme_source_2"
 />
 <script>
-    let theme = sessionStorage.getItem("theme");
-    if (theme === "dark") {
-        sessionStorage.setItem("theme", "dark");
-        node1 = document.getElementById("theme_source");
-        node2 = document.getElementById("theme_source_2");
-        node1.setAttribute("rel", "stylesheet alternate");
-        node2.setAttribute("rel", "stylesheet");
-    } else {
-        sessionStorage.setItem("theme", "light");
-    }
+    /* FOUC-safe theme bootstrap: stored choice, else system preference */
+    (function () {
+        var stored = localStorage.getItem("theme");
+        var theme =
+            stored ||
+            (window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches
+                ? "dark"
+                : "light");
+        if (theme === "dark") {
+            var n1 = document.getElementById("theme_source");
+            var n2 = document.getElementById("theme_source_2");
+            if (n1 && n2) {
+                n1.setAttribute("rel", "stylesheet alternate");
+                n2.setAttribute("rel", "stylesheet");
+            }
+        }
+        localStorage.setItem("theme", theme);
+    })();
 </script>
-<style>
-    /* Prevent zoom/flash during theme switching */
-    * {
-        transition: none !important;
-    }
-    html,
-    body {
-        transition: background-color 0.1s ease !important;
-    }
-</style>
 {% endif %}
+
+<!-- FontAwesome (loaded asynchronously) -->
 <link
     rel="preload"
     href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
@@ -69,6 +77,9 @@
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"
 /></noscript>
+
+<!-- Site behaviour: theme toggle + scroll reveal -->
+<script defer src="{{ '/assets/js/site.js' | relative_url }}"></script>
 
 {% if site.head_scripts %} {% for script in site.head_scripts %}
 <script src="{{ script | relative_url }}"></script>

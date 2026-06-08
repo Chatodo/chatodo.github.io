@@ -4,13 +4,49 @@ search: false
 ---
 
 @charset "utf-8";
-@import "sectionsdark";
-@import "education-timeline-dark";
-@import "projects-dark";
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin2 | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // main partials
 
-// Navigation underline consistency for dark mode
+/* ----- DARK theme color tokens ----- */
+:root {
+    color-scheme: dark;
+
+    --bg: #0a0e16;
+    --surface: #11161f;
+    --surface-2: #151b26;
+    --masthead-bg: rgba(13, 18, 26, 0.82);
+
+    --border: #232c3a;
+    --border-strong: #313c4d;
+
+    --text: #e6edf3;
+    --text-muted: #9fb0c3;
+    --text-subtle: #8b99ad;
+
+    --accent: #a78bfa; /* violet-400 — bright on dark */
+    --accent-strong: #c4b5fd;
+    --accent-contrast: #160e26;
+    --accent-soft: rgba(167, 139, 250, 0.13);
+    --accent-line: rgba(167, 139, 250, 0.32);
+
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 8px 28px rgba(0, 0, 0, 0.4);
+    --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.55);
+    --glow: 0 0 18px rgba(167, 139, 250, 0.22);
+
+    --grid-line: rgba(167, 139, 250, 0.05);
+    --term-dot: #313c4d;
+}
+
+@import "tokens"; // shared structural tokens
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin2 | default: 'dark' }}"; // MM dark skin
+@import "minimal-mistakes"; // MM framework partials
+
+// Custom partials last so they win the cascade over MM defaults
+@import "base";
+@import "sections";
+@import "experience";
+@import "education-timeline";
+@import "projects";
+
+// Navigation underline consistency
 .greedy-nav .visible-links a:before {
-  background: #8b5cf6 !important;
+    background: var(--accent) !important;
 }

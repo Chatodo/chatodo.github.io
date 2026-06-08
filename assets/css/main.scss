@@ -4,15 +4,49 @@ search: false
 ---
 
 @charset "utf-8";
-$primary-color: #6b46c1 !default;
-$background-color: #f8f8f8 !default;
+
+/* ----- LIGHT theme color tokens ----- */
+:root {
+    color-scheme: light;
+
+    --bg: #f5f8fb;
+    --surface: #ffffff;
+    --surface-2: #f5f8fc;
+    --masthead-bg: rgba(255, 255, 255, 0.85);
+
+    --border: #e3e8ef;
+    --border-strong: #cbd5e1;
+
+    --text: #0f1b2d;
+    --text-muted: #475569;
+    --text-subtle: #5f6c7e;
+
+    --accent: #7c3aed; /* violet-600 — AA contrast on white */
+    --accent-strong: #6d28d9;
+    --accent-contrast: #ffffff;
+    --accent-soft: rgba(124, 58, 237, 0.09);
+    --accent-line: rgba(124, 58, 237, 0.26);
+
+    --shadow: 0 1px 2px rgba(15, 23, 42, 0.05), 0 4px 18px rgba(15, 23, 42, 0.06);
+    --shadow-hover: 0 6px 26px rgba(124, 58, 237, 0.15);
+    --glow: 0 4px 20px rgba(124, 58, 237, 0.14);
+
+    --grid-line: rgba(15, 23, 42, 0.045);
+    --term-dot: #cbd5e1;
+}
+
+@import "tokens"; // shared structural tokens
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'air' }}"; // MM skin
+@import "minimal-mistakes"; // MM framework partials
+
+// Custom partials last so they win the cascade over MM defaults
+@import "base";
 @import "sections";
+@import "experience";
 @import "education-timeline";
 @import "projects";
-@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
-@import "minimal-mistakes"; // main partials
 
-// Navigation underline consistency for light mode
+// Navigation underline consistency
 .greedy-nav .visible-links a:before {
-  background: #6b46c1 !important;
+    background: var(--accent) !important;
 }

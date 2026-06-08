@@ -4,3 +4,10 @@ _site
 .jekyll-metadata
 vendor
 CLAUDE.md
+
+# Local CI / build / test artifacts
+.gitlab-ci-local
+dist
+test-results
+node_modules
+.bundle

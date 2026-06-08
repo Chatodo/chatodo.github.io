@@ -13,8 +13,8 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Ivan Krivokuca | GitHub
-description: Ivan Krivokuca's GitHub page
+title: "Ivan Krivokuca"
+description: "Ivan Krivokuca — Security & Development Engineer. Cybersecurity, embedded systems, secure coding, and reverse engineering."
 github_username: Chatodo
 minimal_mistakes_skin: air
 minimal_mistakes_skin2: "dark"
@@ -26,6 +26,18 @@ favicon: "/assets/images/favicon.ico"
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
+
+# Keep internal/dev files out of the published site
+exclude:
+    - CLAUDE.md
+    - README.md
+    - Gemfile
+    - Gemfile.lock
+    - vendor
+    - .gitlab-ci-local
+    - dist
+    - test-results
+    - node_modules
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

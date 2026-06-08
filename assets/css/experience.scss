@@ -1,0 +1,102 @@
+/* ============================================================
+   EXPERIENCE — professional experience cards.
+   Theme-agnostic (CSS custom properties).
+   ============================================================ */
+
+.experience-list {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.xp-card {
+    position: relative;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius-sm);
+    padding: 1.5rem 1.6rem;
+    transition: box-shadow var(--transition), transform var(--transition),
+        border-color var(--transition);
+}
+
+.xp-card:hover {
+    box-shadow: var(--glow);
+    transform: translateX(3px);
+}
+
+.xp-head {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.6rem 0.9rem;
+    margin-bottom: 0.35rem;
+}
+
+.xp-role {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.xp-type {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-line);
+    padding: 0.18rem 0.55rem;
+    border-radius: 999px;
+}
+
+.xp-date {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-subtle);
+    margin-bottom: 1rem;
+}
+
+.xp-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.xp-bullets li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 0.92rem;
+}
+
+.xp-bullets li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.xp-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1rem;
+}
+
+.xp-stack span {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-subtle);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xs);
+    padding: 0.2rem 0.55rem;
+}
+
+@media (max-width: 768px) {
+    .xp-card {
+        padding: 1.25rem 1.2rem;
+    }
+}
