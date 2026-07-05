@@ -12,16 +12,40 @@
     position: relative;
     background: var(--surface-2);
     border: 1px solid var(--border);
-    border-left: 3px solid var(--accent);
     border-radius: var(--radius-sm);
     padding: 1.5rem 1.6rem;
-    transition: box-shadow var(--transition), transform var(--transition),
-        border-color var(--transition);
+    transition: box-shadow var(--transition), border-color var(--transition);
 }
 
 .xp-card:hover {
     box-shadow: var(--glow);
-    transform: translateX(3px);
+}
+
+/* Employer header — mirrors the CV layout (employer + full tenure) */
+.xp-org-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.xp-org {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text);
+}
+
+.xp-org-head .xp-date {
+    margin-bottom: 0;
+}
+
+/* Successive roles within the same employer */
+.xp-role-block + .xp-role-block {
+    margin-top: 1.2rem;
 }
 
 .xp-head {
@@ -57,10 +81,14 @@
     margin-bottom: 1rem;
 }
 
+.xp-role-block .xp-date {
+    margin-bottom: 0;
+}
+
 .xp-bullets {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 0.6rem 0 0;
 }
 
 .xp-bullets li {

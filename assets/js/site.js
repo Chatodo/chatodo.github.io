@@ -46,13 +46,8 @@
         var root = document.documentElement;
         root.classList.add("theme-switching");
 
-        if (theme === "dark") {
-            n1.setAttribute("rel", "stylesheet alternate");
-            n2.setAttribute("rel", "stylesheet");
-        } else {
-            n1.setAttribute("rel", "stylesheet");
-            n2.setAttribute("rel", "stylesheet alternate");
-        }
+        n1.disabled = theme === "dark";
+        n2.disabled = theme !== "dark";
         store.set("theme", theme);
 
         var btn = document.querySelector(".theme-toggle");
@@ -143,10 +138,21 @@
         });
     }
 
+    // GreedyNav (theme script) measures the nav once at DOMContentLoaded;
+    // web fonts swapping in later change the widths. Nudge it to re-check.
+    function initNavResync() {
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(function () {
+                window.dispatchEvent(new Event("resize"));
+            });
+        }
+    }
+
     function init() {
         initToggle();
         initReveal();
         initEasterEgg();
+        initNavResync();
     }
 
     if (document.readyState === "loading") {

@@ -35,6 +35,18 @@ a {
 a:hover {
     color: var(--accent-strong);
 }
+/* The MM skins grey out visited links, and their `a:visited` (0,1,1)
+   outranks our single-class rules like `.btn-primary` (0,1,0) — visited
+   links must look exactly like unvisited ones. */
+a:visited {
+    color: var(--accent);
+}
+.btn-primary:visited {
+    color: var(--accent-contrast);
+}
+.btn-ghost:visited {
+    color: var(--accent);
+}
 
 /* Consistent, theme-aware keyboard focus ring */
 .btn:focus-visible,

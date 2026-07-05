@@ -25,37 +25,49 @@
     rel="stylesheet"
 />
 
-<!-- Theme stylesheets (light = main.css, dark = theme2.css) -->
+<!-- Theme stylesheets (light = main.css, dark = theme2.css).
+     Both are parse-time rel="stylesheet" so the active sheet blocks first
+     paint AND the theme's GreedyNav script — a sheet enabled dynamically
+     (the old rel-flip trick) doesn't block, letting GreedyNav measure an
+     unstyled page and sweep the nav links into the burger menu.
+     The bootstrap below disables the inactive one via link.disabled before
+     paint (FOUC-safe). Dark comes first so light wins the cascade if JS is
+     unavailable. -->
+{% if site.minimal_mistakes_skin2 %}
+<link
+    rel="stylesheet"
+    href="{{ '/assets/css/theme2.css' | relative_url }}"
+    id="theme_source_2"
+/>
+{% endif %}
 <link
     rel="stylesheet"
     href="{{ '/assets/css/main.css' | relative_url }}"
     id="theme_source"
 />
 {% if site.minimal_mistakes_skin2 %}
-<link
-    rel="stylesheet alternate"
-    href="{{ '/assets/css/theme2.css' | relative_url }}"
-    id="theme_source_2"
-/>
 <script>
     /* FOUC-safe theme bootstrap: stored choice, else system preference */
     (function () {
-        var stored = localStorage.getItem("theme");
+        var stored = null;
+        try {
+            stored = localStorage.getItem("theme");
+        } catch (e) {}
         var theme =
             stored ||
             (window.matchMedia &&
             window.matchMedia("(prefers-color-scheme: dark)").matches
                 ? "dark"
                 : "light");
-        if (theme === "dark") {
-            var n1 = document.getElementById("theme_source");
-            var n2 = document.getElementById("theme_source_2");
-            if (n1 && n2) {
-                n1.setAttribute("rel", "stylesheet alternate");
-                n2.setAttribute("rel", "stylesheet");
-            }
+        var light = document.getElementById("theme_source");
+        var dark = document.getElementById("theme_source_2");
+        if (light && dark) {
+            light.disabled = theme === "dark";
+            dark.disabled = theme !== "dark";
         }
-        localStorage.setItem("theme", theme);
+        try {
+            localStorage.setItem("theme", theme);
+        } catch (e) {}
     })();
 </script>
 {% endif %}
