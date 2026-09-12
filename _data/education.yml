@@ -1,0 +1,67 @@
+# hreflang: language of the linked page
+- period: 2024 – 2025
+  title: M.Sc. in Computer Science - Cybersecurity (Apprenticeship)
+  url: https://biomedicale.u-paris.fr/master-informatique/master-informatique-parcours-master-cybersecurite/
+  hreflang: fr
+  institution: Université Paris Cité
+  honours: with highest honors
+  coursework:
+      - Security Auditing & Penetration Testing
+      - Forensics & Malware Analysis
+      - Cisco Network Security
+      - IoT & Medical Sensor Security
+      - Mobile & Cloud Security
+      - Advanced Cryptography & Blockchain
+      - Body Sensor Networks
+      - Telemedicine & Data Protection Law
+      - Security Policy & ISO 27000
+
+- period: 2023 – 2024
+  title: M1 in Computer Science - Cybersecurity & e-Health
+  url: https://biomedicale.u-paris.fr/master-informatique/master-informatique-parcours-cybersecurite-et-esante/
+  hreflang: fr
+  institution: Université Paris Cité
+  honours: with honors
+  coursework:
+      - Cryptography & Computer Security
+      - Ethical Hacking
+      - Network & System Security
+      - Advanced Programming (C, Python)
+      - TCP/IP Networks
+      - Unix/Linux Systems
+      - Algorithmic Complexity & Optimization
+      - Probability & Statistics
+      - Machine Learning & Data Science
+
+- period: 2022 – 2023
+  title: M1 - Cryptology, High-Performance Computing & Algorithmics
+  url: https://cca.lip6.fr/en/
+  institution: Sorbonne University
+  coursework_title: Core coursework
+  coursework:
+      - Complexity, Randomized & Approximation Algorithms
+      - Numerical & Symbolic Algorithm Modeling
+      - Numerical Algorithms (Gradient Descent, Newton)
+      - Algebraic Algorithms (GCD, FFT)
+      - Cryptology
+      - Parallel Programming (OpenMP, MPI, AVX2)
+      - Linux Kernel Programming
+      - Computer Architecture (MIPS)
+      - Distributed Algorithms
+
+- period: 2018 – 2022
+  title: Bachelor's Degree in Computer Science
+  url: https://galilee.univ-paris13.fr/wp-content/uploads/licence_INFO.pdf
+  hreflang: fr
+  institution: Université Sorbonne Paris Nord - Institut Galilée
+  honours: with honors
+  coursework_title: Key areas of study
+  coursework:
+      - Algebra, Analysis, Probability & Statistics
+      - Language & Graph Theory
+      - Algorithm Design & Data Structures
+      - Systems & Networks (C), Functional Programming (OCaml)
+      - Object-Oriented Programming (Java)
+      - Web Programming (JS, PHP)
+      - Unix Programming, System Administration (Linux)
+      - Data Visualization

@@ -1,0 +1,296 @@
+html {
+    background-color: var(--bg); /* MM compiles the light hex here */
+}
+
+body {
+    color: var(--text);
+    line-height: 1.6;
+}
+
+::selection {
+    background: var(--accent);
+    color: var(--accent-contrast);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+/* MM's %tab-focus ring also fires on mouse focus */
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+    outline: 0;
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-strong) transparent;
+}
+
+/* MM hardcodes white here */
+.screen-reader-shortcut:focus {
+    background: var(--surface);
+    color: var(--text);
+}
+
+/* Masthead */
+.masthead {
+    background: var(--masthead-bg);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+.masthead__inner-wrap {
+    padding: 0.6rem 1.25rem;
+    align-items: center; /* the theme toggle is a direct flex child */
+}
+.greedy-nav {
+    background: transparent;
+}
+.greedy-nav a.site-title {
+    font-family: var(--font-mono);
+    font-weight: 600;
+    color: var(--text);
+}
+.greedy-nav .visible-links a {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+}
+.greedy-nav .visible-links a::before {
+    background: var(--accent);
+}
+
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 38px;
+    height: 38px;
+    margin-left: 0.4rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xs);
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    transition: color var(--transition), border-color var(--transition);
+}
+.theme-toggle:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* Hero */
+.hero {
+    max-width: var(--maxw);
+    margin: 1.5rem auto 0;
+    padding: 2.25rem 2rem 1.25rem;
+}
+/* Terminal prompt (the one terminal motif) */
+.prompt {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    max-width: 62ch;
+    margin: 0 0 0.7rem;
+}
+.prompt-line {
+    display: flex;
+    align-items: center;
+    gap: 1ch; /* flex drops whitespace-only text nodes */
+}
+.prompt-frame,
+.prompt-branch {
+    color: var(--text-subtle);
+}
+.prompt-path,
+.prompt-caret {
+    color: var(--accent);
+}
+.prompt-caret {
+    font-weight: 600;
+}
+.prompt-fill {
+    flex: 1;
+    border-top: 1px solid var(--border-strong);
+}
+.hero-name {
+    font-size: clamp(2rem, 4.5vw, 2.9rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.4rem;
+}
+.hero-role {
+    font-family: var(--font-mono);
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: var(--accent);
+    font-weight: 500;
+    margin: 0 0 0.9rem;
+}
+.hero-tagline {
+    color: var(--text-muted);
+    max-width: 62ch;
+    line-height: 1.7;
+    margin: 0 0 1.4rem;
+    font-size: 0.98rem;
+}
+.hero-actions {
+    display: flex;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0.65rem 1.2rem;
+    border: 1px solid transparent;
+    border-radius: var(--radius-xs);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1;
+    transition: background-color var(--transition), border-color var(--transition);
+}
+/* Doubled class beats MM's a:visited (0,1,1) */
+.btn.btn-primary {
+    background: var(--accent);
+    color: var(--accent-contrast);
+}
+.btn.btn-primary:hover {
+    background: var(--accent-strong);
+}
+.btn-ghost {
+    border-color: var(--accent-line);
+}
+.btn-ghost:hover {
+    border-color: var(--accent);
+}
+
+/* C++ easter-egg dialog (site.js) */
+.cpp-modal {
+    padding: 0;
+    border: 0;
+    background: none;
+    overflow: visible; /* the close button sits outside the box */
+}
+.cpp-modal::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+}
+body:has(.cpp-modal[open]) {
+    overflow: hidden;
+}
+.cpp-modal__img {
+    display: block;
+    max-width: 100%;
+    max-height: 86vh;
+    border-radius: var(--radius);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+.cpp-modal__close {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--accent-contrast);
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* 404 */
+.error-page {
+    text-align: center;
+}
+.error-page .prompt {
+    margin: 0 auto 0.5rem;
+    text-align: left;
+}
+.error-code {
+    font-family: var(--font-mono);
+    font-size: clamp(4rem, 18vw, 8rem);
+    font-weight: 700;
+    color: var(--accent);
+    line-height: 1;
+    margin: 0.5rem 0;
+}
+.error-shell {
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+.error-prompt {
+    color: var(--text-subtle);
+}
+.error-img {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    border-radius: var(--radius);
+    margin: 1.5rem auto;
+    box-shadow: var(--shadow);
+}
+
+/* Footer */
+.page__footer {
+    border-top: 1px solid var(--border);
+    color: var(--text-muted);
+}
+.page__footer a:hover {
+    color: var(--accent);
+}
+.page__footer .fas,
+.page__footer .fab {
+    color: inherit;
+}
+.footer-updated {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+/* Entrance motion */
+@keyframes rise {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+    .hero > *,
+    .section,
+    .projects-header,
+    .projects-grid {
+        animation: rise 0.62s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+    }
+    @for $i from 1 through 5 {
+        .hero > :nth-child(#{$i}) {
+            animation-delay: 0.04s + 0.07s * ($i - 1);
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 1.75rem 1.25rem 1rem;
+        margin-top: 1rem;
+    }
+}

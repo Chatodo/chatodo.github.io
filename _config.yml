@@ -1,37 +1,26 @@
-# Site settings
 title: "Ivan Krivokuca"
-baseurl: ""
-github_username: Chatodo
-minimal_mistakes_skin: air
-minimal_mistakes_skin2: "dark"
-repository: chatodo/chatodo.github.io
+remote_theme: mmistakes/minimal-mistakes@4.28.1 # pinned: includes and Sass vars are overridden by name
+favicon: /assets/images/favicon.ico
 
-# Favicon
-favicon: "/assets/images/favicon.ico"
-
-# Build settings
-markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
-
-# Keep internal/dev files out of the published site
 exclude:
     - CLAUDE.md
-    - README.md
+    - CV.*
     - Gemfile
     - Gemfile.lock
     - vendor
-    - .gitlab-ci-local
     - dist
     - test-results
     - node_modules
 
-# Plugins
 plugins:
-    - jemoji
     - jekyll-include-cache
 
 sass:
     sass_dir: assets/css
+    style: compressed
+
+footer_scripts: # replaces MM's main.min.js (jQuery + GreedyNav)
+    - /assets/js/site.js
 
 footer:
     links:

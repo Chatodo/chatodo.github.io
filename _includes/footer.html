@@ -1,26 +1,12 @@
 <div class="page__footer-follow">
     <ul class="social-icons">
-        {% if site.data.ui-text[site.locale].follow_label %}
+        {%- for link in site.footer.links -%}
         <li>
-            <strong>{{ site.data.ui-text[site.locale].follow_label }}</strong>
+            <a href="{{ link.url }}" rel="noopener noreferrer"><i class="{{ link.icon | default: 'fas fa-fw fa-link' }}" aria-hidden="true"></i> {{ link.label }}</a>
         </li>
-        {% endif %} {% if site.footer.links %} {% for link in site.footer.links
-        %} {% if link.label and link.url %}
-        <li>
-            <a href="{{ link.url }}" rel="nofollow noopener noreferrer"
-                ><i
-                    class="{{ link.icon | default: 'fas fa-link' }}"
-                    aria-hidden="true"
-                ></i>
-                {{ link.label }}</a
-            >
-        </li>
-        {% endif %} {% endfor %} {% endif %}
+        {%- endfor -%}
     </ul>
     <p class="footer-updated">
-        Last updated:
-        <time datetime="{{ site.time | date_to_xmlschema }}"
-            >{{ site.time | date: "%d-%m-%Y" }}</time
-        >
+        Last updated: <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: "%d-%m-%Y" }}</time>
     </p>
 </div>

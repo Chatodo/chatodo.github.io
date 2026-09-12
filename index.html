@@ -2,457 +2,130 @@
 layout: default
 ---
 
-<header class="hero">
-    <p class="hero-eyebrow">$ whoami</p>
+<header class="hero" id="main">
+    {% include prompt.html cmd="whoami" %}
     <h1 class="hero-name">Ivan Krivokuca</h1>
-    <p class="hero-role">Security &amp; Development Engineer</p>
+    <p class="hero-role">Research Engineer - Secure Embedded Systems</p>
     <p class="hero-tagline">
-        Secure coding, embedded/IoT device security, and reverse engineering —
-        M.Sc. Cybersecurity, Université Paris Cité.
+        Secure embedded systems, firmware and hardware security
+        <br />
+        MSc Cybersecurity at Université Paris Cité
     </p>
     <div class="hero-actions">
-        <a class="btn btn-primary" href="{{ '/projects/' | relative_url }}">
-            <i class="fas fa-folder-open" aria-hidden="true"></i> View projects
-        </a>
-        <a class="btn btn-ghost" href="{{ '/assets/files/CV.pdf' | relative_url }}">
-            <i class="fas fa-file-pdf" aria-hidden="true"></i> Download CV
-        </a>
-        <a class="btn btn-ghost" href="https://github.com/Chatodo" rel="noopener">
-            <i class="fab fa-github" aria-hidden="true"></i> GitHub
-        </a>
+        {% include btn.html label="View projects" url="/projects/" icon="fas
+        fa-folder-open" %} {% include btn.html label="GitHub"
+        url="https://github.com/Chatodo" icon="fab fa-github" ghost=true
+        blank=true %}
     </div>
 </header>
 
-<section class="section reveal" aria-labelledby="about-title">
-    <h2 class="section-title" id="about-title">About</h2>
-    <div class="about-content">
-        <p>
-            I'm a <strong>Security &amp; Development Engineer</strong> based in
-            Île-de-France, working on the security of
-            <strong>IoT &amp; embedded devices</strong>,
-            <strong>secure coding</strong>, and
-            <strong>reverse engineering</strong> — with hands-on experience
-            porting secure embedded systems and integrating cryptographic
-            modules onto constrained hardware.
-        </p>
-        <p>
-            I hold an M.Sc. in Computer Science with a specialization in
-            Cybersecurity (and e-Health) from Université Paris Cité.
-        </p>
-    </div>
-</section>
-
-<section class="section reveal" id="experience" aria-labelledby="experience-title">
+<section class="section" aria-labelledby="experience-title">
     <h2 class="section-title" id="experience-title">Experience</h2>
-
     <div class="experience-list">
+        {%- for job in site.data.experience -%}
         <article class="xp-card">
+            {%- assign latest = job.roles.first.period | split: " – " -%} {%-
+            assign earliest = job.roles.last.period | split: " – " -%}
             <div class="xp-org-head">
-                <span class="xp-org">Inria — Versailles</span>
-                <span class="xp-date">Sep 2024 – Oct 2026</span>
+                <span class="xp-org">{{ job.org }}</span>
+                <span class="xp-date">{{ earliest[0] }} – {{ latest[1] }}</span>
             </div>
-
+            {%- for role in job.roles -%}
             <div class="xp-role-block">
                 <div class="xp-head">
-                    <span class="xp-role">Research Engineer</span>
-                    <span class="xp-type">Fixed-term</span>
+                    <span class="xp-role">{{ role.title }}</span>
+                    <span class="xp-type">({{ role.type }})</span>
                 </div>
-                <div class="xp-date">Oct 2025 – Oct 2026</div>
+                {%- if job.roles.size > 1 -%}
+                <div class="xp-date">{{ role.period }}</div>
+                {%- endif -%}
             </div>
-
-            <div class="xp-role-block">
-                <div class="xp-head">
-                    <span class="xp-role">Secure Embedded Developer</span>
-                    <span class="xp-type">Apprenticeship</span>
-                </div>
-                <div class="xp-date">Sep 2024 – Sep 2025</div>
-                <ul class="xp-bullets">
-                    <li>
-                        Ported an embedded DBMS onto STM32 architectures —
-                        low-level optimization and BSP enrichment, with
-                        cryptographic security-module integration.
-                    </li>
-                    <li>
-                        Designed and automated a continuous-integration (CI)
-                        pipeline running tests and benchmarks.
-                    </li>
-                    <li>
-                        Extended the Python client interfacing with the
-                        embedded target.
-                    </li>
-                </ul>
-            </div>
-
-            <div class="xp-stack">
-                <span>C</span><span>Python</span><span>STM32</span><span>OpenOCD</span><span>GDB</span><span>Git</span>
-            </div>
-        </article>
-
-        <article class="xp-card">
-            <div class="xp-org-head">
-                <span class="xp-org">Aïdemo Consulting — Paris</span>
-                <span class="xp-date">May 2022 – Jul 2022</span>
-            </div>
-            <div class="xp-head">
-                <span class="xp-role">Web Developer</span>
-                <span class="xp-type">Internship</span>
-            </div>
+            {%- endfor -%}
             <ul class="xp-bullets">
-                <li>
-                    Built an e-learning platform — jQuery / Bootstrap front-end,
-                    PHP / MySQL back-end.
-                </li>
-                <li>
-                    Conducted security audits on WordPress sites and remediated
-                    vulnerabilities.
-                </li>
+                {%- for item in job.bullets -%}
+                <li>{{ item }}</li>
+                {%- endfor -%}
             </ul>
             <div class="xp-stack">
-                <span>PHP</span><span>MySQL</span><span>jQuery</span><span>Bootstrap</span><span>WordPress</span>
+                {%- for tech in job.stack -%}<span>{{ tech }}</span>{%- endfor
+                -%}
             </div>
         </article>
+        {%- endfor -%}
     </div>
 </section>
 
-<section class="section reveal" aria-labelledby="skills-title">
+<section class="section" aria-labelledby="skills-title">
     <h2 class="section-title" id="skills-title">Technical Skills</h2>
-
-    <div class="skills-container">
-        <div class="skill-category">
-            <h3>Programming Languages</h3>
-            <div class="skill-icons">
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=c"
-                    alt="C"
-                    title="C"
-                    loading="lazy"
-                />
-                <img
-                    class="skill-icon cpp-easter-egg"
-                    src="https://skillicons.dev/icons?i=cpp"
-                    alt="C++"
-                    title="C++"
-                    role="button"
-                    tabindex="0"
-                    aria-label="C++ — open the cat meme"
-                    loading="lazy"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=python"
-                    alt="Python"
-                    title="Python"
-                    loading="lazy"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=java"
-                    alt="Java"
-                    title="Java"
-                    loading="lazy"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=bash"
-                    alt="Bash/Shell"
-                    title="Bash/Shell"
-                    loading="lazy"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=php"
-                    alt="PHP"
-                    title="PHP"
-                    loading="lazy"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=mysql"
-                    alt="SQL"
-                    title="SQL"
-                    loading="lazy"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=javascript"
-                    alt="JavaScript"
-                    title="JavaScript"
-                    loading="lazy"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=matlab"
-                    alt="MATLAB"
-                    title="MATLAB"
-                    loading="lazy"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=r"
-                    alt="R"
-                    title="R"
-                    loading="lazy"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=ocaml"
-                    alt="OCaml"
-                    title="OCaml"
-                    loading="lazy"
-                />
-            </div>
-        </div>
-
-        <div class="skill-category">
-            <h3>DevOps &amp; Infrastructure</h3>
-            <div class="skill-icons">
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=docker"
-                    alt="Docker"
-                    title="Docker"
-                    loading="lazy"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=kubernetes"
-                    alt="Kubernetes"
-                    title="Kubernetes"
-                    loading="lazy"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=git"
-                    alt="Git"
-                    title="Git"
-                    loading="lazy"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=linux"
-                    alt="Linux Administration"
-                    title="Linux Administration"
-                    loading="lazy"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=vscode"
-                    alt="VS Code"
-                    title="VS Code"
-                    loading="lazy"
-                />
-            </div>
-        </div>
-    </div>
-
     <div class="detailed-skills">
+        {%- for group in site.data.skills -%}
         <div class="skill-section">
-            <h4>Security Tools &amp; Frameworks</h4>
+            <h4>{{ group.name }}</h4>
             <div class="skill-tags">
-                <span class="skill-tag">Metasploit</span>
-                <span class="skill-tag">Nmap</span>
-                <span class="skill-tag">Wireshark</span>
-                <span class="skill-tag">Burp Suite</span>
-                <span class="skill-tag">Kali Linux</span>
-                <span class="skill-tag">Ghidra</span>
-                <span class="skill-tag">gdb</span>
-                <span class="skill-tag">OpenSSL</span>
+                {%- for tag in group.tags -%} {%- if tag == "C++" -%}
+                <button
+                    type="button"
+                    class="skill-tag cpp-easter-egg"
+                    aria-label="C++ - open the cat meme"
+                >
+                    C++
+                </button>
+                {%- else -%}
+                <span class="skill-tag">{{ tag }}</span>
+                {%- endif -%} {%- endfor -%}
             </div>
         </div>
-
-        <div class="skill-section">
-            <h4>Security Solutions &amp; Enterprise</h4>
-            <div class="skill-tags">
-                <span class="skill-tag">SIEM (QRadar, Splunk, ELK)</span>
-                <span class="skill-tag">IDS/IPS (Suricata)</span>
-                <span class="skill-tag">Firewalls (pfSense, iptables)</span>
-                <span class="skill-tag">IAM (Okta, SSO, MFA)</span>
-            </div>
-        </div>
-
-        <div class="skill-section">
-            <h4>Technical Expertise</h4>
-            <div class="skill-tags">
-                <span class="skill-tag">Penetration Testing</span>
-                <span class="skill-tag">Vulnerability Assessment</span>
-                <span class="skill-tag">Security Auditing</span>
-                <span class="skill-tag">Incident Response</span>
-                <span class="skill-tag">Digital Forensics</span>
-                <span class="skill-tag">Reverse Engineering</span>
-                <span class="skill-tag">Malware Analysis</span>
-            </div>
-        </div>
-
-        <div class="skill-section">
-            <h4>Infrastructure &amp; DevOps</h4>
-            <div class="skill-tags">
-                <span class="skill-tag">Docker</span>
-                <span class="skill-tag">Kubernetes</span>
-                <span class="skill-tag">Service Mesh (Istio)</span>
-                <span class="skill-tag">mTLS Encryption</span>
-                <span class="skill-tag">RBAC Policies</span>
-                <span class="skill-tag">Secrets Management</span>
-            </div>
-        </div>
-
-        <div class="skill-section">
-            <h4>Certifications &amp; Training</h4>
-            <div class="skill-tags">
-                <span class="skill-tag">MOOC ANSSI</span>
-                <span class="skill-tag">CNIL</span>
-                <span class="skill-tag">CEH Preparation</span>
-                <span class="skill-tag">Cisco CCNA Security</span>
-            </div>
-        </div>
-
-        <div class="skill-section">
-            <h4>Languages</h4>
-            <div class="languages">
-                <span class="lang"><b>French</b> <span class="lvl">Native</span></span>
-                <span class="lang"><b>English</b> <span class="lvl">Professional · C1</span></span>
-                <span class="lang"><b>German</b> <span class="lvl">Basic</span></span>
-                <span class="lang"><b>Serbian</b> <span class="lvl">Basic</span></span>
-            </div>
-        </div>
+        {%- endfor -%}
     </div>
 </section>
 
-<section class="section reveal" aria-labelledby="education-title">
+<section class="section" aria-labelledby="education-title">
     <h2 class="section-title" id="education-title">Education</h2>
-
     <div class="education-timeline">
+        {%- for degree in site.data.education -%}
         <div class="timeline-item">
-            <div class="timeline-marker">
-                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-            </div>
             <div class="timeline-content">
-                <div class="education-period">2024 – 2025</div>
+                <div class="education-period">{{ degree.period }}</div>
                 <div class="education-title">
-                    M.Sc. in Computer Science — Cybersecurity (Apprenticeship)
-                </div>
-                <div class="education-institution">Université Paris Cité</div>
-                <span class="education-honours">With Highest Honors</span>
-                <div class="coursework-title">Relevant security coursework</div>
-                <ul class="coursework-list">
-                    <li>Advanced Network Security (Firewalls, IDS/IPS)</li>
-                    <li>Ethical Hacking Methodologies (CEH)</li>
-                    <li>Security Tool Development (Python)</li>
-                    <li>Malware Analysis Techniques</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-marker">
-                <i class="fas fa-shield-alt" aria-hidden="true"></i>
-            </div>
-            <div class="timeline-content">
-                <div class="education-period">2023 – 2024</div>
-                <div class="education-title">
-                    M1 in Computer Science — Cybersecurity &amp; e-Health
-                </div>
-                <div class="education-institution">Université Paris Cité</div>
-                <span class="education-honours">With Honors</span>
-                <div class="education-description">
                     <a
-                        class="education-link"
-                        href="https://biomedicale.u-paris.fr/master-informatique/master-informatique-parcours-cybersecurite-et-esante/"
-                        rel="noopener"
-                        >Program details (French)</a
+                        href="{{ degree.url }}"
+                        {%
+                        if
+                        degree.hreflang
+                        %}
+                        hreflang="{{ degree.hreflang }}"
+                        {%
+                        endif
+                        %}
+                        >{{ degree.title }}</a
                     >
-                </div>
-                <div class="coursework-title">Relevant coursework</div>
-                <ul class="coursework-list">
-                    <li>SOC/SIEM operations</li>
-                    <li>Healthcare-specific security challenges &amp; standards</li>
-                    <li>Reverse engineering</li>
-                    <li>Secure software development</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-marker">
-                <i class="fas fa-square-root-alt" aria-hidden="true"></i>
-            </div>
-            <div class="timeline-content">
-                <div class="education-period">2022 – 2023</div>
-                <div class="education-title">
-                    M1 — Cryptology, High-Performance Computing &amp; Algorithmics
-                </div>
-                <div class="education-institution">Sorbonne University</div>
-                <div class="education-description">
-                    <a class="education-link" href="https://cca.lip6.fr/en/" rel="noopener"
-                        >Program details</a
-                    >
-                </div>
-                <div class="coursework-title">Core coursework</div>
-                <ul class="coursework-list">
-                    <li>Complexity, Randomized &amp; Approximation Algorithms</li>
-                    <li>Numerical &amp; Symbolic Algorithm Modeling</li>
-                    <li>Numerical Algorithms (Gradient Descent, Newton)</li>
-                    <li>Algebraic Algorithms (GCD, FFT)</li>
-                    <li>Cryptology</li>
-                    <li>Parallel Programming (OpenMP, MPI, AVX2)</li>
-                    <li>Linux Kernel Programming</li>
-                    <li>Computer Architecture (MIPS)</li>
-                    <li>Distributed Algorithms</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-marker">
-                <i class="fas fa-code" aria-hidden="true"></i>
-            </div>
-            <div class="timeline-content">
-                <div class="education-period">2018 – 2022</div>
-                <div class="education-title">
-                    Bachelor's Degree in Computer Science
                 </div>
                 <div class="education-institution">
-                    Université Sorbonne Paris Nord — Institut Galilée
+                    {{ degree.institution }} {%- if degree.honours %}
+                    <span class="education-honours">({{ degree.honours }})</span
+                    >{% endif %}
                 </div>
-                <span class="education-honours">With Honors</span>
-                <div class="education-description">
-                    <a
-                        class="education-link"
-                        href="https://galilee.univ-paris13.fr/wp-content/uploads/licence_INFO.pdf"
-                        rel="noopener"
-                        >Program details (French)</a
-                    >
+                <div class="coursework-title">
+                    {{ degree.coursework_title | default: "Coursework" }}
                 </div>
-                <div class="coursework-title">Key areas of study</div>
                 <ul class="coursework-list">
-                    <li>Algebra, Analysis, Probability &amp; Statistics</li>
-                    <li>Language &amp; Graph Theory</li>
-                    <li>Algorithm Design &amp; Data Structures</li>
-                    <li>Systems &amp; Networks (C), Functional Programming (OCaml)</li>
-                    <li>Object-Oriented Programming (Java)</li>
-                    <li>Web Programming (JS, PHP)</li>
-                    <li>Unix Programming, System Administration (Linux)</li>
-                    <li>Data Visualization</li>
+                    {%- for course in degree.coursework -%}
+                    <li>{{ course }}</li>
+                    {%- endfor -%}
                 </ul>
             </div>
         </div>
+        {%- endfor -%}
     </div>
 </section>
 
-<!-- C++ easter-egg modal (behaviour lives in assets/js/site.js) -->
-<div
-    id="cpp-meme-modal"
-    class="cpp-modal"
-    role="dialog"
-    aria-modal="true"
-    aria-label="C++ cat meme"
->
-    <div class="cpp-modal__inner">
-        <img
-            class="cpp-modal__img"
-            src="{{ '/assets/images/cat_c++.jpg' | relative_url }}"
-            alt="C++ cat meme"
-        />
-        <button type="button" class="cpp-modal__close" aria-label="Close">×</button>
-    </div>
-</div>
+<dialog id="cpp-meme-modal" class="cpp-modal" aria-label="C++ cat meme">
+    <img
+        class="cpp-modal__img"
+        src="{{ '/assets/images/cat_c++.jpg' | relative_url }}"
+        alt="C++ cat meme"
+        width="720"
+        height="720"
+    />
+    <button type="button" class="cpp-modal__close" aria-label="Close">×</button>
+</dialog>

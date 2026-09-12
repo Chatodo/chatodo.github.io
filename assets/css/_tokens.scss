@@ -1,0 +1,103 @@
+$accent-light: #7c3aed; // violet-600 - AA on white
+$accent-dark: #a78bfa; // violet-400
+
+// MM mixes these at compile time - must stay hex, not var()
+$bg-light: #f5f8fb;
+$text-light: #0f1b2d;
+$text-muted-light: #475569;
+$border-light: #e3e8ef;
+
+:root {
+    color-scheme: light;
+
+    --font-sans:
+        "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+        Helvetica, Arial, sans-serif;
+    --font-mono:
+        "IBM Plex Mono", ui-monospace, "SFMono-Regular", "Cascadia Mono", Menlo,
+        Consolas, monospace;
+
+    --maxw: 1280px;
+    --radius: 12px;
+    --radius-sm: 8px;
+    --radius-xs: 6px;
+    --transition: 0.2s ease;
+
+    --bg: #{$bg-light};
+    --surface: #ffffff;
+    --surface-2: #f5f8fc;
+    --masthead-bg: rgba(255, 255, 255, 0.85);
+
+    --border: #{$border-light};
+    --border-strong: #cbd5e1;
+
+    --text: #{$text-light};
+    --text-muted: #{$text-muted-light};
+    --text-subtle: #5f6c7e;
+
+    --accent: #{$accent-light};
+    --accent-strong: #6d28d9;
+    --accent-contrast: #ffffff;
+    --accent-soft: #{rgba($accent-light, 0.09)};
+    --accent-line: #{rgba($accent-light, 0.26)};
+
+    --shadow:
+        0 1px 2px rgba(15, 23, 42, 0.05), 0 4px 18px rgba(15, 23, 42, 0.06);
+}
+
+@mixin dark-tokens {
+    color-scheme: dark;
+
+    --bg: #0a0e16;
+    --surface: #11161f;
+    --surface-2: #151b26;
+    --masthead-bg: rgba(13, 18, 26, 0.82);
+
+    --border: #232c3a;
+    --border-strong: #313c4d;
+
+    --text: #e6edf3;
+    --text-muted: #9fb0c3;
+    --text-subtle: #8b99ad;
+
+    --accent: #{$accent-dark};
+    --accent-strong: #c4b5fd;
+    --accent-contrast: #160e26;
+    --accent-soft: #{rgba($accent-dark, 0.13)};
+    --accent-line: #{rgba($accent-dark, 0.32)};
+
+    --shadow: 0 2px 4px rgba(0, 0, 0, 0.3), 0 8px 28px rgba(0, 0, 0, 0.4);
+}
+
+// OS preference, overridden by an explicit data-theme (site.js)
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        @include dark-tokens;
+    }
+}
+:root[data-theme="dark"] {
+    @include dark-tokens;
+}
+
+// MM !default variables - must precede the framework import
+$doc-font-size: 17px; // MM scales the root up to 22px on wide screens
+$doc-font-size-medium: $doc-font-size;
+$doc-font-size-large: $doc-font-size;
+$doc-font-size-x-large: $doc-font-size;
+
+$sans-serif: var(--font-sans);
+$monospace: var(--font-mono);
+
+$background-color: $bg-light;
+$text-color: $text-light;
+$muted-text-color: $text-muted-light;
+$border-color: $border-light;
+$footer-background-color: var(--surface);
+
+$link-color: var(--accent);
+$link-color-hover: var(--accent-strong);
+$link-color-visited: var(--accent);
+$masthead-link-color: var(--text-muted);
+$masthead-link-color-hover: var(--accent);
+$intro-transition: none;
+$global-transition: none; // MM cross-fades every text color otherwise

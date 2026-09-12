@@ -1,0 +1,18 @@
+- name: Programming Languages
+  tags: [C, C++, Python, Bash, SQL, PHP, JavaScript]
+- name: Embedded
+  tags: [STM32 (Cortex-M), CMake, STM32CubeMX, OpenOCD, GDB]
+- name: Security
+  tags:
+      [
+          TPM 2.0,
+          OpenSSL,
+          "Penetration Testing (Nmap, Burp Suite, Metasploit)",
+          "SIEM (QRadar, ELK)",
+          IDS (Suricata),
+          "Firewalls (pfSense, iptables)",
+      ]
+- name: DevOps
+  tags: [Docker, Kubernetes, Istio, CI/CD, Git, Linux]
+- name: Languages
+  tags: [French - Native, English - Professional (C1), Serbian - Basic]

@@ -1,0 +1,35 @@
+- org: Inria - Versailles
+  roles:
+      - title: Research Engineer
+        type: Fixed-term
+        period: Oct 2025 – Oct 2026
+      - title: Secure Embedded Developer
+        type: Apprenticeship
+        period: Sep 2024 – Sep 2025
+  bullets:
+      - >-
+          Low-level optimization under tight memory constraints and BSP
+          enrichment of a secure embedded system for medical applications.
+      - >-
+          Ported the firmware to a new microcontroller generation (STM32F4 →
+          STM32H7/H5): peripheral bring-up (USB, eMMC, NOR flash, UART), BSP and
+          debug-tooling adaptation.
+      - >-
+          Designed and automated a CI pipeline running tests and benchmarks on
+          real hardware targets to catch functional and performance regressions.
+      - >-
+          Extended the Python test and interfacing client for the embedded
+          target.
+  stack: [C, Python, STM32, CMake, STM32CubeMX, OpenOCD, GDB, Git]
+
+- org: Aïdemo Consulting - Paris
+  roles:
+      - title: Web Developer
+        type: Internship
+        period: May 2022 – Jul 2022
+  bullets:
+      - >-
+          Built an e-learning platform - jQuery / Bootstrap front-end, PHP /
+          MySQL back-end.
+      - Audited and fixed vulnerabilities on a production WordPress site.
+  stack: [PHP, MySQL, jQuery, Bootstrap, WordPress]

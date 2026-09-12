@@ -11,3 +11,6 @@ dist
 test-results
 node_modules
 .bundle
+
+# LaTeX CV kept next to the site (sources, PDF and build by-products), never published or committed
+CV.*

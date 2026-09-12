@@ -1,97 +1,43 @@
 <meta charset="utf-8" />
-
-<title>{{ page.title | default: site.title }}</title>
-<!-- Showcase site reached via direct links — keep it out of search engines -->
+<title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
 <meta name="robots" content="noindex, nofollow" />
-
-<!-- Favicon -->
-{% if site.favicon %}
-<link rel="icon" type="image/x-icon" href="{{ site.favicon | relative_url }}">
-<link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | relative_url }}">
-{% endif %}
-
+<link rel="icon" href="{{ site.favicon | relative_url }}" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+{%- comment -%} Restore an explicit theme choice before the stylesheet applies
+{%- endcomment -%}
 <script>
-    document.documentElement.className =
-        document.documentElement.className.replace(/\bno-js\b/g, "") + " js ";
-</script>
-
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-/>
-
-<!-- Theme stylesheets (light = main.css, dark = theme2.css).
-     Both are parse-time rel="stylesheet" so the active sheet blocks first
-     paint AND the theme's GreedyNav script — a sheet enabled dynamically
-     (the old rel-flip trick) doesn't block, letting GreedyNav measure an
-     unstyled page and sweep the nav links into the burger menu.
-     The bootstrap below disables the inactive one via link.disabled before
-     paint (FOUC-safe). Dark comes first so light wins the cascade if JS is
-     unavailable. -->
-{% if site.minimal_mistakes_skin2 %}
-<link
-    rel="stylesheet"
-    href="{{ '/assets/css/theme2.css' | relative_url }}"
-    id="theme_source_2"
-/>
-{% endif %}
-<link
-    rel="stylesheet"
-    href="{{ '/assets/css/main.css' | relative_url }}"
-    id="theme_source"
-/>
-{% if site.minimal_mistakes_skin2 %}
-<script>
-    /* FOUC-safe theme bootstrap: stored choice, else system preference */
     (function () {
-        var stored = null;
         try {
-            stored = localStorage.getItem("theme");
-        } catch (e) {}
-        var theme =
-            stored ||
-            (window.matchMedia &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches
-                ? "dark"
-                : "light");
-        var light = document.getElementById("theme_source");
-        var dark = document.getElementById("theme_source_2");
-        if (light && dark) {
-            light.disabled = theme === "dark";
-            dark.disabled = theme !== "dark";
-        }
-        try {
-            localStorage.setItem("theme", theme);
+            var theme = localStorage.getItem("theme");
+            if (theme === "dark" || theme === "light") {
+                document.documentElement.setAttribute("data-theme", theme);
+            }
         } catch (e) {}
     })();
 </script>
-{% endif %}
 
-<!-- External icon CDNs: warm up the connections early -->
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-<link rel="dns-prefetch" href="https://skillicons.dev" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+/>
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
 
-<!-- FontAwesome (exact-pinned, loaded asynchronously) -->
+{%- comment -%} FontAwesome off the render path {%- endcomment -%}
+<link rel="preconnect" href="https://cdn.jsdelivr.net" />
 <link
     rel="preload"
     href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"
     as="style"
-    onload="this.onload=null;this.rel='stylesheet'"
+    onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+    "
 />
 <noscript
     ><link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css"
 /></noscript>
-
-<!-- Site behaviour: theme toggle + scroll reveal -->
-<script defer src="{{ '/assets/js/site.js' | relative_url }}"></script>
-
-{% if site.head_scripts %} {% for script in site.head_scripts %}
-<script src="{{ script | relative_url }}"></script>
-{% endfor %} {% endif %}

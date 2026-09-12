@@ -1,56 +1,14 @@
 ---
-permalink: /404.html
 layout: default
+title: "404"
 ---
 
-<section class="section" style="text-align: center">
-    <p class="hero-eyebrow" style="text-align: center; margin-bottom: 0.5rem">
-        $ cd /requested/page
-    </p>
-
-    <div
-        style="
-            font-family: var(--font-mono);
-            font-size: clamp(4rem, 18vw, 8rem);
-            font-weight: 700;
-            color: var(--accent);
-            line-height: 1;
-            margin: 0.5rem 0;
-        "
-    >
-        404
+<section class="section error-page" id="main">
+    {% include prompt.html cmd="cd /requested/page" %}
+    <h1 class="error-code">404</h1>
+    <div class="error-shell">
+        <span class="error-prompt">zsh:</span> no such file or directory
     </div>
-
-    <div
-        style="
-            font-family: var(--font-mono);
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        "
-    >
-        <span style="color: var(--text-subtle)">zsh:</span> no such file or
-        directory
-    </div>
-
-    <h1 style="font-size: 1.4rem; color: var(--text); margin-bottom: 1rem">
-        Oops! This page could not be found.
-    </h1>
-
-    <img
-        src="{{ '/assets/images/cat_crying.jpg' | relative_url }}"
-        alt="Sad cat looking at a computer"
-        loading="lazy"
-        style="
-            max-width: 360px;
-            width: 100%;
-            border-radius: var(--radius);
-            margin: 1.5rem auto;
-            display: block;
-            box-shadow: var(--shadow);
-        "
-    />
-
-    <a href="{{ '/' | relative_url }}" class="btn btn-primary">
-        <i class="fas fa-home" aria-hidden="true"></i> Back to home
-    </a>
+    <img class="error-img" src="{{ '/assets/images/cat_crying.jpg' | relative_url }}" alt="Sad cat looking at a computer" width="800" height="450" />
+    {% include btn.html label="Back to home" url="/" icon="fas fa-home" %}
 </section>
