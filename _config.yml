@@ -1,55 +1,26 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+title: "Ivan Krivokuca"
+remote_theme: mmistakes/minimal-mistakes@4.28.1 # pinned: includes and Sass vars are overridden by name
+favicon: /assets/images/favicon.ico
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: Ivan Krivokuca | GitHub
-description: Ivan Krivokuca's GitHub page
-github_username: Chatodo
-minimal_mistakes_skin: air
-minimal_mistakes_skin2: "dark"
-repository: chatodo/chatodo.github.io
+exclude:
+    - CLAUDE.md
+    - CV.*
+    - Gemfile
+    - Gemfile.lock
+    - vendor
+    - dist
+    - test-results
+    - node_modules
 
-# Favicon
-favicon: "/assets/images/favicon.ico"
-
-# Build settings
-markdown: kramdown
-remote_theme: mmistakes/minimal-mistakes
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
-
-# Plugins (previously gems:)
 plugins:
-    - jekyll-paginate
-    - jekyll-sitemap
-    - jekyll-gist
-    - jekyll-feed
-    - jemoji
     - jekyll-include-cache
 
 sass:
     sass_dir: assets/css
+    style: compressed
+
+footer_scripts: # replaces MM's main.min.js (jQuery + GreedyNav)
+    - /assets/js/site.js
 
 footer:
     links:
@@ -62,33 +33,3 @@ footer:
         - label: "Email"
           icon: "fas fa-fw fa-envelope-square"
           url: "m&#97;il&#116;o&#58;i&#118;an&#46;kr&#105;vokuca&#64;proton&#46;me"
-
-atom_feed:
-    hide: true
-
-defaults:
-    # _posts
-    - scope:
-          path: ""
-          type: posts
-      values:
-          layout: single
-          author_profile: true
-          read_time: true
-          comments: true
-          share: true
-          related: true
-    # _pages
-    - scope:
-          path: "_pages"
-          type: pages
-      values:
-          layout: single
-          author_profile: true
-
-category_archive:
-    type: liquid
-    path: /categories/
-tag_archive:
-    type: liquid
-    path: /tags/

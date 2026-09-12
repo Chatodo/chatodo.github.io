@@ -1,0 +1,36 @@
+---
+layout: default
+title: Projects
+---
+
+<div class="projects-container" id="main">
+    <div class="projects-header">
+        <h1 class="projects-title">Projects</h1>
+        <p class="projects-subtitle">
+            A selection of academic, security &amp; CTF work - most reports are
+            in French.
+        </p>
+    </div>
+
+    <div class="projects-grid">
+        {%- for project in site.data.projects -%}
+        <article class="project-card">
+            <div class="project-icon">
+                <i class="{{ project.icon }}" aria-hidden="true"></i>
+            </div>
+            <h2 class="project-title">{{ project.title }}</h2>
+            <p class="project-description">{{ project.description }}</p>
+            <div class="project-tags">
+                {%- for tag in project.tags -%}
+                <span class="project-tag">{{ tag }}</span>
+                {%- endfor -%}
+            </div>
+            <div class="project-links">
+                {%- for link in project.links -%} {% include btn.html
+                label=link.label url=link.url icon=link.icon ghost=link.ghost
+                blank=true %} {%- endfor -%}
+            </div>
+        </article>
+        {%- endfor -%}
+    </div>
+</div>

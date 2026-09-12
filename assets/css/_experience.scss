@@ -1,0 +1,65 @@
+.experience-list {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.xp-org-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+}
+.xp-org {
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+
+.xp-role-block + .xp-role-block {
+    margin-top: 1.2rem;
+}
+.xp-head {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.5rem;
+    margin-bottom: 0.35rem;
+}
+.xp-role {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+.xp-type {
+    font-size: 0.95rem;
+    color: var(--text-subtle);
+}
+.xp-date {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--text-subtle);
+}
+
+.xp-bullets {
+    margin: 0.6rem 0 0;
+}
+.xp-bullets li {
+    padding-left: 1.4rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.92rem;
+}
+
+.xp-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .xp-card {
+        padding: 1.25rem 1.2rem;
+    }
+}

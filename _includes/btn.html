@@ -1,0 +1,3 @@
+<a class="btn {% if include.ghost %}btn-ghost{% else %}btn-primary{% endif %}" href="{{ include.url | relative_url }}"{% if include.blank %} target="_blank" rel="noopener noreferrer"{% endif %}>
+    <i class="{{ include.icon | default: 'fas fa-file-pdf' }}" aria-hidden="true"></i> {{ include.label }}{% if include.blank %}<span class="visually-hidden"> (opens in a new tab)</span>{% endif %}
+</a>

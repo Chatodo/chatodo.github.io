@@ -1,0 +1,143 @@
+- icon: fas fa-graduation-cap
+  title: Master's Thesis - Hardware Security & Firmware Protection
+  description: >-
+      Surveyed low-level threats (UEFI bootkits, Rowhammer/Spectre, fault
+      injection, DMA/JTAG, side channels) from x86/x64 to embedded ARM/RISC-V,
+      compared hardware defenses (Secure Boot, TPM 2.0, TrustZone, RISC-V PMP,
+      Secure Elements) with a critical look at TPM 2.0 (TPM-FAIL, CVE-2023-1017,
+      bus interception, TOCTOU), and proposed a hybrid Secure Element + enclave
+      architecture for constrained embedded systems.
+  tags:
+      [
+          Hardware Security,
+          Firmware Protection,
+          TPM 2.0,
+          TrustZone,
+          Secure Elements,
+      ]
+  links:
+      - { label: Read Full Research, url: /assets/files/memoire.pdf }
+
+- icon: fas fa-flask
+  title: SEED Security Labs
+  description: >-
+      Exploited vulnerable Set-UID binaries via stack-based buffer overflows and
+      environment-variable attacks, and examined the stack-protection mechanisms
+      meant to stop them (SEED labs).
+  tags: [Buffer Overflow, Binary Exploitation, Set-UID, Stack Protection]
+  links:
+      - {
+            label: Buffer Overflow Lab,
+            url: /assets/files/SEED_buffer_overflow_lab.pdf,
+        }
+      - {
+            label: Env Variable Lab,
+            url: /assets/files/SEED_env_variable_setuid_lab.pdf,
+            ghost: true,
+        }
+
+- icon: fas fa-chart-line
+  title: QRadar SIEM
+  description: >-
+      Built threat-detection rules, custom dashboards, and security analytics on
+      the IBM QRadar SIEM platform, as part of an academic SOC project.
+  tags: [SIEM, IBM QRadar, Threat Detection, SOC Analytics]
+  links:
+      - { label: View Contribution, url: /assets/files/qradar_contribution.pdf }
+
+- icon: fas fa-shield-alt
+  title: Active Defense with a Honeypot Network
+  description: >-
+      Deployed a multi-level honeypot infrastructure on the T-Pot platform
+      (Dionaea, Cowrie, Pentbox) and analyzed real-world attacks - EternalBlue
+      exploitation and SSH brute-force campaigns - through Kibana dashboards.
+      Built a high-interaction SSH honeypot with auditd/rsyslog logging for
+      threat intelligence.
+  tags: [T-Pot, Cowrie/Dionaea, ELK/Kibana, SSH Honeypot]
+  links:
+      - { label: Read Report, url: /assets/files/honeypots.pdf }
+      - {
+            label: View Script,
+            url: https://github.com/Chatodo/chatodo.github.io/blob/main/projects/honey_ssh.sh,
+            icon: fas fa-code,
+            ghost: true,
+        }
+
+- icon: fas fa-cubes
+  title: Secure Microservices on Kubernetes
+  description: >-
+      Deployed a 3-tier application (Nginx, Flask, MySQL) meshed with Istio -
+      HTTP/HTTPS gateway, URI-based VirtualService routing, persistent volume -
+      and secured the cluster: strict mTLS between services, HTTPS ingress,
+      least-privilege RBAC, Kubernetes secrets with no hard-coded credentials,
+      hardened images (Docker Scout), Kiali validation.
+  tags: [Kubernetes, Istio, mTLS, RBAC, Docker Scout]
+  links:
+      - {
+            label: View on GitHub,
+            url: https://github.com/Chatodo/kubernetes-projet,
+            icon: fab fa-github,
+        }
+
+- icon: fas fa-network-wired
+  title: VPN & IPsec Implementation
+  description: >-
+      Configured and tested IPsec VPN tunnels, covering key exchange,
+      encryption, and the tunnel/transport security architecture; documented in
+      a technical presentation.
+  tags:
+      [
+          Network Security,
+          VPN Implementation,
+          IPsec Protocols,
+          Network Architecture,
+      ]
+  links:
+      - {
+            label: View Presentation,
+            url: /assets/files/vpn_ipsec_tp_presentation.pdf,
+        }
+
+- icon: fas fa-flag
+  title: CTF & HackTheBox Write-ups
+  description: >-
+      Step-by-step write-ups of machine compromises - enumeration, exploitation,
+      and privilege escalation to root - plus ongoing offensive & defensive
+      training on HTB Academy.
+  tags:
+      [
+          Penetration Testing,
+          Privilege Escalation,
+          Machine Exploitation,
+          HTB Academy,
+      ]
+  links:
+      - {
+            label: HTB Progress,
+            url: /assets/files/HTB.pdf,
+            icon: fas fa-chart-line,
+        }
+      - {
+            label: EscapeTwo,
+            url: /projects/writeups/escapeTwo_HTB.pdf,
+            ghost: true,
+        }
+      - {
+            label: Corrosion 1,
+            url: /projects/writeups/corrosion1_write-up.pdf,
+            ghost: true,
+        }
+
+- icon: fas fa-folder-open
+  title: Bachelor's Degree Projects
+  description: >-
+      Undergraduate projects in C and Java: data-structure & algorithm
+      implementations, low-level systems and network programming, and web
+      fundamentals.
+  tags: [C, Java, Algorithms, Data Structures, System/Network Programming]
+  links:
+      - {
+            label: View Projects,
+            url: https://github.com/Chatodo/Projets-Licence/blob/main/README_EN.md,
+            icon: fab fa-github,
+        }

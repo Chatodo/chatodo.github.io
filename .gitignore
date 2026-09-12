@@ -4,3 +4,13 @@ _site
 .jekyll-metadata
 vendor
 CLAUDE.md
+
+# Local CI / build / test artifacts
+.gitlab-ci-local
+dist
+test-results
+node_modules
+.bundle
+
+# LaTeX CV kept next to the site (sources, PDF and build by-products), never published or committed
+CV.*

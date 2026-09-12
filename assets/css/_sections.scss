@@ -1,0 +1,116 @@
+.section {
+    max-width: var(--maxw);
+    margin: 2rem auto;
+    padding: 2.5rem 2.25rem;
+}
+.section,
+.project-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.section-title {
+    font-size: clamp(1.3rem, 2.4vw, 1.55rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin: 0 0 1.8rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.xp-card,
+.timeline-content {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1.5rem 1.6rem;
+}
+
+.section,
+.xp-card,
+.timeline-content,
+.project-card {
+    transition: border-color var(--transition);
+}
+.section:hover,
+.xp-card:hover,
+.timeline-content:hover,
+.project-card:hover {
+    border-color: var(--border-strong);
+}
+
+/* Mono tags */
+.skill-tag,
+.xp-stack span,
+.project-tag {
+    font-family: var(--font-mono);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xs);
+}
+.xp-stack span,
+.project-tag {
+    font-size: 0.72rem;
+    color: var(--text-subtle);
+    padding: 0.2rem 0.55rem;
+}
+
+/* Arrow lists */
+.xp-bullets,
+.coursework-list {
+    list-style: none;
+    padding: 0;
+    color: var(--text-muted);
+}
+.xp-bullets li,
+.coursework-list li {
+    position: relative;
+}
+.xp-bullets li::before,
+.coursework-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+/* Skills */
+.detailed-skills {
+    margin-top: 1.5rem;
+}
+.skill-section {
+    margin-bottom: 1.6rem;
+}
+.skill-section h4 {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0 0 0.9rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+}
+.skill-tag {
+    color: var(--text-muted);
+    padding: 0.32rem 0.7rem;
+    font-size: 0.78rem;
+    line-height: inherit; /* the C++ tag is a <button>; MM resets it to normal */
+    transition: color var(--transition), border-color var(--transition);
+}
+.skill-tag:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 1.8rem 1.25rem;
+        margin: 1.25rem auto;
+    }
+}

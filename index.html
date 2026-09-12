@@ -2,421 +2,130 @@
 layout: default
 ---
 
-<div class="section">
-    <div class="section-title">About me</div>
-    <div class="about-content">
-        <p>
-            🎓 Recently graduated with a Master's in Computer Science,
-            <strong>specializing in Cybersecurity and e-Health</strong> from
-            Université Paris Cité.
-        </p>
-
-        <p>
-            🔒 Passionate about IT/Cybersecurity, with a particular focus on
-            <strong>Internet of Things devices</strong>,
-            <strong>Secure Coding</strong>, and
-            <strong>Reverse Engineering</strong>.
-        </p>
-
-        <p>
-            🛡️ Continuously enhancing my practical security skills through
-            HackTheBox Academy.
-            <a class="a_not" href="/assets/files/HTB.pdf">Check my progress</a>
-        </p>
+<header class="hero" id="main">
+    {% include prompt.html cmd="whoami" %}
+    <h1 class="hero-name">Ivan Krivokuca</h1>
+    <p class="hero-role">Research Engineer - Secure Embedded Systems</p>
+    <p class="hero-tagline">
+        Secure embedded systems, firmware and hardware security
+        <br />
+        MSc Cybersecurity at Université Paris Cité
+    </p>
+    <div class="hero-actions">
+        {% include btn.html label="View projects" url="/projects/" icon="fas
+        fa-folder-open" %} {% include btn.html label="GitHub"
+        url="https://github.com/Chatodo" icon="fab fa-github" ghost=true
+        blank=true %}
     </div>
-</div>
+</header>
 
-<div class="section">
-    <div class="section-title">💻 Technical Skills</div>
-
-    <div class="skills-container">
-        <div class="skill-category">
-            <h3>Programming Languages</h3>
-            <div class="skill-icons">
-                <img
-                    class="skill-icon"
-                    src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg"
-                    alt="C"
-                    title="C"
-                />
-                <img
-                    class="skill-icon cpp-easter-egg"
-                    src="https://skillicons.dev/icons?i=cpp"
-                    alt="C++"
-                    title="C++ (click me!)"
-                    onclick="showCppMeme()"
-                    style="cursor: pointer"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=python"
-                    alt="Python"
-                    title="Python"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=java&theme=light"
-                    alt="Java"
-                    title="Java"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=bash"
-                    alt="Bash/Shell"
-                    title="Bash/Shell"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=php"
-                    alt="PHP"
-                    title="PHP"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=mysql"
-                    alt="SQL"
-                    title="SQL"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=javascript"
-                    alt="JavaScript"
-                    title="JavaScript"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=matlab&theme=light"
-                    alt="MATLAB"
-                    title="MATLAB"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=r&theme=light"
-                    alt="R"
-                    title="R"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=ocaml"
-                    alt="OCaml"
-                    title="OCaml"
-                />
+<section class="section" aria-labelledby="experience-title">
+    <h2 class="section-title" id="experience-title">Experience</h2>
+    <div class="experience-list">
+        {%- for job in site.data.experience -%}
+        <article class="xp-card">
+            {%- assign latest = job.roles.first.period | split: " – " -%} {%-
+            assign earliest = job.roles.last.period | split: " – " -%}
+            <div class="xp-org-head">
+                <span class="xp-org">{{ job.org }}</span>
+                <span class="xp-date">{{ earliest[0] }} – {{ latest[1] }}</span>
             </div>
-        </div>
-
-        <div class="skill-category">
-            <h3>DevOps & Infrastructure</h3>
-            <div class="skill-icons">
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=docker"
-                    alt="Docker"
-                    title="Docker"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=kubernetes"
-                    alt="Kubernetes"
-                    title="Kubernetes"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=git"
-                    alt="Git"
-                    title="Git"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=linux"
-                    alt="Linux Administration"
-                    title="Linux Administration"
-                />
-                <img
-                    class="skill-icon"
-                    src="https://skillicons.dev/icons?i=vscode&theme=light"
-                    alt="VS Code"
-                    title="VS Code"
-                />
-            </div>
-        </div>
-    </div>
-
-    <div class="detailed-skills">
-        <div class="skill-section">
-            <h4>🔒 Security Tools & Frameworks</h4>
-            <div class="skill-tags">
-                <span class="skill-tag">Metasploit</span>
-                <span class="skill-tag">Nmap</span>
-                <span class="skill-tag">Wireshark</span>
-                <span class="skill-tag">Burp Suite</span>
-                <span class="skill-tag">Kali Linux</span>
-                <span class="skill-tag">Ghidra</span>
-                <span class="skill-tag">gdb</span>
-                <span class="skill-tag">OpenSSL</span>
-                <span class="skill-tag">Nessus</span>
-                <span class="skill-tag">Volatility</span>
-                <span class="skill-tag">Autopsy</span>
-            </div>
-        </div>
-
-        <div class="skill-section">
-            <h4>🛡️ Security Solutions & Enterprise</h4>
-            <div class="skill-tags">
-                <span class="skill-tag">SIEM (QRadar, Splunk, ELK)</span>
-                <span class="skill-tag">IDS/IPS (Suricata)</span>
-                <span class="skill-tag">Firewalls (pfSense, iptables)</span>
-                <span class="skill-tag">IAM (Okta, SSO, MFA)</span>
-            </div>
-        </div>
-
-        <div class="skill-section">
-            <h4>⚔️ Technical Expertise</h4>
-            <div class="skill-tags">
-                <span class="skill-tag">Penetration Testing</span>
-                <span class="skill-tag">Vulnerability Assessment</span>
-                <span class="skill-tag">Security Auditing</span>
-                <span class="skill-tag">Incident Response</span>
-                <span class="skill-tag">Digital Forensics</span>
-                <span class="skill-tag">Reverse Engineering</span>
-                <span class="skill-tag">Malware Analysis</span>
-            </div>
-        </div>
-
-        <div class="skill-section">
-            <h4>🏗️ Infrastructure & DevOps</h4>
-            <div class="skill-tags">
-                <span class="skill-tag">Docker</span>
-                <span class="skill-tag">Kubernetes</span>
-                <span class="skill-tag">VMware/VirtualBox</span>
-                <span class="skill-tag">Service Mesh (Istio)</span>
-                <span class="skill-tag">mTLS Encryption</span>
-                <span class="skill-tag">RBAC Policies</span>
-                <span class="skill-tag">TLS Certificates</span>
-                <span class="skill-tag">Secrets Management</span>
-                <span class="skill-tag">Linux Administration</span>
-            </div>
-        </div>
-
-        <div class="skill-section">
-            <h4>⚡ High Performance Computing & Data Analysis</h4>
-            <div class="skill-tags">
-                <span class="skill-tag"
-                    >Parallel Programming (OpenMP, MPI, AVX)</span
-                >
-                <span class="skill-tag">Pandas</span>
-                <span class="skill-tag">NumPy</span>
-                <span class="skill-tag">Scikit-learn</span>
-                <span class="skill-tag">Anomaly Detection</span>
-                <span class="skill-tag">Threat Detection</span>
-            </div>
-        </div>
-
-        <div class="skill-section">
-            <h4>📜 Certifications & Training</h4>
-            <div class="skill-tags">
-                <span class="skill-tag">MOOC ANSSI</span>
-                <span class="skill-tag">CNIL</span>
-                <span class="skill-tag">CEH Preparation</span>
-                <span class="skill-tag">Cisco CCNA Security Preparation</span>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="section">
-    <div class="section-title">🎓 Educational Background</div>
-
-    <div class="education-timeline">
-        <div class="timeline-item">
-            <div class="timeline-marker">
-                <i class="fas fa-graduation-cap"></i>
-            </div>
-            <div class="timeline-content">
-                <div class="education-period">2023-2025</div>
-                <div class="education-title">
-                    Master's Degree in Cybersecurity and e-health
+            {%- for role in job.roles -%}
+            <div class="xp-role-block">
+                <div class="xp-head">
+                    <span class="xp-role">{{ role.title }}</span>
+                    <span class="xp-type">({{ role.type }})</span>
                 </div>
-                <div class="education-institution">Université Paris Cité</div>
-                <div class="education-description">
+                {%- if job.roles.size > 1 -%}
+                <div class="xp-date">{{ role.period }}</div>
+                {%- endif -%}
+            </div>
+            {%- endfor -%}
+            <ul class="xp-bullets">
+                {%- for item in job.bullets -%}
+                <li>{{ item }}</li>
+                {%- endfor -%}
+            </ul>
+            <div class="xp-stack">
+                {%- for tech in job.stack -%}<span>{{ tech }}</span>{%- endfor
+                -%}
+            </div>
+        </article>
+        {%- endfor -%}
+    </div>
+</section>
+
+<section class="section" aria-labelledby="skills-title">
+    <h2 class="section-title" id="skills-title">Technical Skills</h2>
+    <div class="detailed-skills">
+        {%- for group in site.data.skills -%}
+        <div class="skill-section">
+            <h4>{{ group.name }}</h4>
+            <div class="skill-tags">
+                {%- for tag in group.tags -%} {%- if tag == "C++" -%}
+                <button
+                    type="button"
+                    class="skill-tag cpp-easter-egg"
+                    aria-label="C++ - open the cat meme"
+                >
+                    C++
+                </button>
+                {%- else -%}
+                <span class="skill-tag">{{ tag }}</span>
+                {%- endif -%} {%- endfor -%}
+            </div>
+        </div>
+        {%- endfor -%}
+    </div>
+</section>
+
+<section class="section" aria-labelledby="education-title">
+    <h2 class="section-title" id="education-title">Education</h2>
+    <div class="education-timeline">
+        {%- for degree in site.data.education -%}
+        <div class="timeline-item">
+            <div class="timeline-content">
+                <div class="education-period">{{ degree.period }}</div>
+                <div class="education-title">
                     <a
-                        class="education-link"
-                        href="https://biomedicale.u-paris.fr/master-informatique/master-informatique-parcours-cybersecurite-et-esante/"
-                        >Program Details (French)</a
+                        href="{{ degree.url }}"
+                        {%
+                        if
+                        degree.hreflang
+                        %}
+                        hreflang="{{ degree.hreflang }}"
+                        {%
+                        endif
+                        %}
+                        >{{ degree.title }}</a
                     >
+                </div>
+                <div class="education-institution">
+                    {{ degree.institution }} {%- if degree.honours %}
+                    <span class="education-honours">({{ degree.honours }})</span
+                    >{% endif %}
                 </div>
                 <div class="coursework-title">
-                    Relevant Security Coursework:
+                    {{ degree.coursework_title | default: "Coursework" }}
                 </div>
                 <ul class="coursework-list">
-                    <li>
-                        Advanced Network Security (Firewall Configuration,
-                        IDS/IPS Setup)
-                    </li>
-                    <li>Ethical Hacking Methodologies CEH</li>
-                    <li>Security Tool Development (Python)</li>
-                    <li>Malware Analysis Techniques</li>
-                    <li>SOC/SIEM</li>
-                    <li>Healthcare-specific Challenges and Norms</li>
+                    {%- for course in degree.coursework -%}
+                    <li>{{ course }}</li>
+                    {%- endfor -%}
                 </ul>
             </div>
         </div>
-
-        <div class="timeline-item">
-            <div class="timeline-marker">
-                <i class="fas fa-square-root-alt"></i>
-            </div>
-            <div class="timeline-content">
-                <div class="education-period">2022-2023</div>
-                <div class="education-title">
-                    Master CCA (Cryptology, High-performance Computing, and
-                    Algorithms)
-                </div>
-                <div class="education-institution">Sorbonne University</div>
-                <div class="education-description">
-                    <a class="education-link" href="https://cca.lip6.fr/en/"
-                        >Program Details</a
-                    >
-                    - First year completed with focus on cryptography and
-                    security
-                </div>
-                <div class="coursework-title">Core Coursework:</div>
-                <ul class="coursework-list">
-                    <li>Complexity, Randomized and Approximation Algorithms</li>
-                    <li>Numerical and Symbolic Algorithm Modeling</li>
-                    <li>
-                        Numerical Algorithms (Gradient Descent, Newton's Method,
-                        etc.)
-                    </li>
-                    <li>
-                        Fundamentals of Algebraic Algorithms (GCD, FFT, etc.)
-                    </li>
-                    <li>Cryptology</li>
-                    <li>Parallel Programming (OpenMP, MPI, AVX2)</li>
-                    <li>Linux Kernel Programming</li>
-                    <li>Computer Architecture (MIPS)</li>
-                    <li>Distributed Algorithms</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="timeline-item">
-            <div class="timeline-marker">
-                <i class="fas fa-code"></i>
-            </div>
-            <div class="timeline-content">
-                <div class="education-period">2018-2022</div>
-                <div class="education-title">
-                    Bachelor's Degree in Computer Science
-                </div>
-                <div class="education-institution">Sorbonne Paris Nord</div>
-                <div class="education-description">
-                    <a
-                        class="education-link"
-                        href="https://galilee.univ-paris13.fr/wp-content/uploads/licence_INFO.pdf"
-                        >Program Details (French)</a
-                    >
-                </div>
-                <div class="coursework-title">Key Areas of Study:</div>
-                <ul class="coursework-list">
-                    <li>
-                        Algebra, Analysis, Probability & Statistics, Language
-                        Theory, Graph Theory
-                    </li>
-                    <li>
-                        Algorithm Design, Imperative Programming and Data
-                        Structures
-                    </li>
-                    <li>
-                        Systems and Networks (C), Functional Programming (OCaml)
-                    </li>
-                    <li>
-                        Object-Oriented Programming (Java), Web Programming (JS,
-                        PHP)
-                    </li>
-                    <li>Unix Programming, System Administration (Linux)</li>
-                    <li>Data Visualization</li>
-                </ul>
-            </div>
-        </div>
+        {%- endfor -%}
     </div>
-</div>
+</section>
 
-<!-- Hidden C++ Meme Modal -->
-<div
-    id="cpp-meme-modal"
-    style="
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.8);
-        z-index: 9999;
-        justify-content: center;
-        align-items: center;
-    "
-    onclick="hideCppMeme()"
->
-    <div style="position: relative; max-width: 90%; max-height: 90%">
-        <img
-            src="{{ '/assets/images/cat_c++.jpg' | relative_url }}"
-            style="
-                max-width: 100%;
-                max-height: 100%;
-                border-radius: 12px;
-                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-            "
-            alt="C++ Cat Meme"
-        />
-        <button
-            onclick="hideCppMeme()"
-            style="
-                position: absolute;
-                top: -10px;
-                right: -10px;
-                background: #ff4757;
-                color: white;
-                border: none;
-                border-radius: 50%;
-                width: 30px;
-                height: 30px;
-                cursor: pointer;
-                font-size: 18px;
-                font-weight: bold;
-            "
-        >
-            ×
-        </button>
-    </div>
-</div>
-
-<script>
-    function showCppMeme() {
-        const modal = document.getElementById("cpp-meme-modal");
-        modal.style.display = "flex";
-        document.body.style.overflow = "hidden";
-
-        // Smooth fade and scale animation
-        const img = modal.querySelector("img");
-        img.style.transform = "scale(0.8)";
-        img.style.opacity = "0";
-        img.style.transition = "transform 0.4s ease-out, opacity 0.4s ease-out";
-        setTimeout(() => {
-            img.style.transform = "scale(1)";
-            img.style.opacity = "1";
-        }, 10);
-    }
-
-    function hideCppMeme() {
-        const modal = document.getElementById("cpp-meme-modal");
-        const img = modal.querySelector("img");
-
-        img.style.transform = "scale(0.8)";
-        img.style.opacity = "0";
-        setTimeout(() => {
-            modal.style.display = "none";
-            document.body.style.overflow = "auto";
-        }, 400);
-    }
-</script>
+<dialog id="cpp-meme-modal" class="cpp-modal" aria-label="C++ cat meme">
+    <img
+        class="cpp-modal__img"
+        src="{{ '/assets/images/cat_c++.jpg' | relative_url }}"
+        alt="C++ cat meme"
+        width="720"
+        height="720"
+    />
+    <button type="button" class="cpp-modal__close" aria-label="Close">×</button>
+</dialog>
